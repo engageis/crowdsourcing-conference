@@ -39,6 +39,7 @@ module Ccs12
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
+    config.time_zone = 'Brasilia'
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -62,5 +63,9 @@ module Ccs12
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.generators do |g|
+      g.fixture_replacement :machinist
+    end
   end
 end

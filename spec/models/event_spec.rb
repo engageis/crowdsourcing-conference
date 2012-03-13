@@ -1,5 +1,26 @@
 require 'spec_helper'
 
 describe Event do
-  it{ should validate_presence_of :text }
+  it{ should have_many :event_translations }
+  it{ should be_respond_to :text }
+
+  describe "translations" do
+    before do
+      @event = Event.make!
+      LOCALES.each do |lang|
+        EventTranslation.make! event: @event, locale: lang[0], text: lang[1]
+      end
+    end
+    subject{ @event }
+
+    context "english" do
+      before{ I18n.locale = :en }
+      its(:text){ should == "English" }
+    end
+
+    context "portuguese" do
+      before{ I18n.locale = "pt-br" }
+      its(:text){ should == "Portuguese" }
+    end
+  end
 end

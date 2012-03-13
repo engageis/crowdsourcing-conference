@@ -33,6 +33,7 @@ end
 
 group :production do
   gem "execjs"
+  gem "therubyracer"
 end
 
 group :development do

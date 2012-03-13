@@ -1,4 +1,4 @@
-ADDITIONAL_LOCALES = {
-  :en => 'English',
-  :"pt-br" => 'Portuguese'
+LOCALES = {
+  :"pt-br" => 'Portuguese',
+  :en => 'English'
 }

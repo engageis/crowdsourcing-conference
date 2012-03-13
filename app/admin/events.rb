@@ -14,7 +14,7 @@ ActiveAdmin.register Event do
   # controller do
   #   def new
   #     @event = Event.new
-  #     ADDITIONAL_LOCALES.each do |lang|
+  #     LOCALES.each do |lang|
   #       @event.event_translations.find_or_initialize_by_locale(lang[0])
   #     end
   #   end

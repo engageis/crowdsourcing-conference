@@ -1,23 +1,15 @@
 = semantic_form_for [:admin, @event] do |f|
-
   .language-tabs
     ul.language-selection
       - @event.event_translations.each do |lang|
-        li = link_to ADDITIONAL_LOCALES[lang.locale.to_sym], "#lang-#{lang.locale}"
+        li = link_to LOCALES[lang.locale.to_sym], "#lang-#{lang.locale}"
 
     = f.semantic_fields_for :event_translations do |lf|
-      div[id="lang-#{lf.object.locale}" style="#{'display: block;' if lf.object.locale == :en}"]
-        = lf.inputs "#{ADDITIONAL_LOCALES[lf.object.locale.to_sym]} Text" do
+      div[id="lang-#{lf.object.locale}" style="#{'display: none;' if lf.object.locale == :en}"]
+        = lf.inputs "#{LOCALES[lf.object.locale.to_sym]} Text" do
           = lf.input :text, :input_html => { 'data-editor-type' => 'wysiwyg' }
           = lf.input :locale, :as => :hidden
-
   = f.buttons
 
 javascript:
-  $('.language-tabs').tabs({
-    show: function(event, ui) {
-      $(ui.panel).find("*[data-editor-type=wysiwyg]").tinymce({
-        #{render :partial => 'admin/shared/wysiwyg_options'}
-      });
-    }
-  });
+  $('.language-tabs').tabs();

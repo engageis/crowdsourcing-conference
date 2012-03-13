@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+event = Event.new
+LOCALES.each do |lang|
+  event.event_translations.new locale: lang[0], text: lang[1]
+end
+event.save

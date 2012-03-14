@@ -12,6 +12,7 @@ gem "slim-rails"
 
 # Translations
 gem 'globalize3'
+gem 'routing-filter'
 
 gem 'jquery-rails'
 gem 'inherited_resources'

@@ -134,6 +134,8 @@ GEM
       json (~> 1.4)
     responders (0.8.0)
       railties (~> 3.1)
+    routing-filter (0.3.0)
+      actionpack
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -199,6 +201,7 @@ DEPENDENCIES
   machinist
   pg
   rails (= 3.2.2)
+  routing-filter
   rspec-rails (~> 2.6.0)
   sass-rails (~> 3.2.3)
   shoulda-matchers

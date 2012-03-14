@@ -1,0 +1,22 @@
+= semantic_form_for [:admin, @schedule] do |f|
+  = f.inputs do
+    = f.input :day, :as => :select, :collection => {"Frist day" => 1, "Second day" => 2}
+    = f.input :time, :as => :time, :minute_step => 15
+
+    / This is necessary, because not work to create
+    input[name="schedule[time(1i)]" value=Time.now.year type="hidden"]
+    input[name="schedule[time(2i)]" value=Time.now.month type="hidden"]
+    input[name="schedule[time(3i)]" value=Time.now.day type="hidden"]
+
+  .language-tabs
+    = render 'admin/shared/language_selection', translations: @schedule.schedule_translations
+
+    = f.semantic_fields_for :schedule_translations do |lf|
+      div[id="lang-#{lf.object.locale}"]
+        = lf.inputs "#{LOCALES[lf.object.locale.to_sym]} Text" do
+          = lf.input :description
+          = lf.input :locale, :as => :hidden
+  = f.buttons
+
+javascript:
+  $('.language-tabs').tabs();

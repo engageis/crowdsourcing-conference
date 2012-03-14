@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312202346) do
+ActiveRecord::Schema.define(:version => 20120314162946) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -58,6 +58,40 @@ ActiveRecord::Schema.define(:version => 20120312202346) do
   add_index "event_translations", ["locale"], :name => "index_event_translations_on_locale"
 
   create_table "events", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "schedule_translations", :force => true do |t|
+    t.integer  "schedule_id"
+    t.string   "locale"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "schedule_translations", ["locale"], :name => "index_schedule_translations_on_locale"
+  add_index "schedule_translations", ["schedule_id"], :name => "index_schedule_translations_on_schedule_id"
+
+  create_table "schedules", :force => true do |t|
+    t.integer  "day"
+    t.time     "time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "type"
+    t.date     "birthday"
+    t.string   "company"
+    t.string   "role"
+    t.string   "phone"
+    t.string   "phone_cell"
+    t.string   "sex"
+    t.string   "city"
+    t.string   "state"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

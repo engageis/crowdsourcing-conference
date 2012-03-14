@@ -1,0 +1,3 @@
+ul.language-selection
+  - translations.each do |lang|
+    li = link_to LOCALES[lang.locale.to_sym], "#lang-#{lang.locale}"

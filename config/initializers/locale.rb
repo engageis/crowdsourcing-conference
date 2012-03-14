@@ -1,4 +1,4 @@
 LOCALES = {
-  :"pt-br" => 'Portuguese',
-  :en => 'English'
+  :en => 'English',
+  :"pt-br" => 'Portuguese'
 }

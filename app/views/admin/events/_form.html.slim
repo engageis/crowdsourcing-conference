@@ -1,15 +1,13 @@
 = semantic_form_for [:admin, @event] do |f|
   .language-tabs
-    ul.language-selection
-      - @event.event_translations.each do |lang|
-        li = link_to LOCALES[lang.locale.to_sym], "#lang-#{lang.locale}"
+    = render 'admin/shared/language_selection', translations: @event.event_translations
 
     = f.semantic_fields_for :event_translations do |lf|
-      div[id="lang-#{lf.object.locale}" style="#{'display: none;' if lf.object.locale == :en}"]
+      div[id="lang-#{lf.object.locale}"]
         = lf.inputs "#{LOCALES[lf.object.locale.to_sym]} Text" do
-          = lf.input :text, :input_html => { 'data-editor-type' => 'wysiwyg' }
+          = lf.input :text
           = lf.input :locale, :as => :hidden
-  = f.buttons
+    = f.buttons
 
 javascript:
   $('.language-tabs').tabs();

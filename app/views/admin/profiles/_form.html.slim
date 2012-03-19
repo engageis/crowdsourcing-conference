@@ -1,0 +1,22 @@
+= semantic_form_for [:admin, @profile], :html => { :multipart => true } do |f|
+  = f.inputs do
+    = f.input :kind, label: "Type", :as => :select, :collection => Profile::KINDS
+    = f.input :name
+    = f.input :company
+    = f.input :avatar, required: true
+    div.avatar
+      = image_tag @profile.avatar.url(:default) if @profile.avatar?
+
+  .language-tabs
+    = render 'admin/shared/language_selection', translations: @profile.profile_translations
+
+    = f.semantic_fields_for :profile_translations do |lf|
+      div[id="lang-#{lf.object.locale}"]
+        = lf.inputs "#{LOCALES[lf.object.locale.to_sym]} Text" do
+          = lf.input :country, :as => :string
+          = lf.input :bio
+          = lf.input :locale, :as => :hidden
+  = f.buttons
+
+javascript:
+  $('.language-tabs').tabs();

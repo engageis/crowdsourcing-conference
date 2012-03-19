@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/joaomilho/moip-ruby.git
+  revision: 51fed33a329e1f23677925d0f34157e7cfff4332
+  specs:
+    moip (1.0.1)
+      activesupport (>= 2.3.2)
+      httparty (~> 0.6.1)
+      nokogiri (~> 1.4.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +53,7 @@ GEM
     bourbon (1.4.0)
       sass (>= 3.1)
     builder (3.0.0)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -51,6 +61,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    crack (0.1.8)
     daemons (1.1.8)
     database_cleaner (0.7.1)
     devise (2.0.4)
@@ -64,6 +75,7 @@ GEM
     execjs (1.3.0)
       multi_json (~> 1.0)
     fastercsv (1.5.4)
+    ffaker (1.13.0)
     foreigner (1.1.5)
       activerecord (>= 3.0.0)
     formtastic (2.1.0)
@@ -74,6 +86,8 @@ GEM
       paper_trail (~> 2)
     has_scope (0.5.1)
     hike (1.2.1)
+    httparty (0.6.1)
+      crack (= 0.1.8)
     i18n (0.6.0)
     inherited_resources (1.3.1)
       has_scope (~> 0.5.0)
@@ -100,9 +114,15 @@ GEM
       polyamorous (~> 0.5.0)
     mime-types (1.17.2)
     multi_json (1.1.0)
+    nokogiri (1.4.7)
     orm_adapter (0.0.6)
     paper_trail (2.6.2)
       rails (~> 3)
+    paperclip (2.7.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     pg (0.13.2)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -194,11 +214,14 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   execjs
+  ffaker
   foreigner
   globalize3
   inherited_resources
   jquery-rails
   machinist
+  moip!
+  paperclip
   pg
   rails (= 3.2.2)
   routing-filter

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314162946) do
+ActiveRecord::Schema.define(:version => 20120319162838) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -60,6 +60,30 @@ ActiveRecord::Schema.define(:version => 20120314162946) do
   create_table "events", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "profile_translations", :force => true do |t|
+    t.integer  "profile_id"
+    t.string   "locale"
+    t.text     "bio"
+    t.string   "country"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "profile_translations", ["locale"], :name => "index_profile_translations_on_locale"
+  add_index "profile_translations", ["profile_id"], :name => "index_profile_translations_on_profile_id"
+
+  create_table "profiles", :force => true do |t|
+    t.string   "name"
+    t.string   "company"
+    t.string   "kind"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "schedule_translations", :force => true do |t|

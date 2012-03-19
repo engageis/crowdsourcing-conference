@@ -17,6 +17,10 @@ gem 'routing-filter'
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'activeadmin'
+gem "paperclip"
+
+# Payment
+gem 'moip', :git => 'git://github.com/joaomilho/moip-ruby.git'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -29,7 +33,7 @@ group :development, :test do
   gem "machinist"
   gem "database_cleaner"
   gem "shoulda-matchers"
-  #gem "ffaker"
+  gem "ffaker"
 end
 
 group :production do

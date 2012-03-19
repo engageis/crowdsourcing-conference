@@ -19,7 +19,7 @@ describe Event do
     end
 
     context "portuguese" do
-      before{ I18n.locale = "pt-br" }
+      before{ I18n.locale = "pt-BR" }
       its(:text){ should == "Portuguese" }
     end
   end

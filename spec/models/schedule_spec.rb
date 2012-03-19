@@ -14,7 +14,7 @@ describe Schedule do
   describe "translations" do
     before do
       @schedule = Schedule.make
-      @schedule.schedule_translations.map { |t| t.description = LOCALES[t.locale] }
+      @schedule.schedule_translations.map{ |t| t.description = LOCALES[t.locale] }
       @schedule.save
     end
     subject{ @schedule }
@@ -25,7 +25,7 @@ describe Schedule do
     end
 
     context "portuguese" do
-      before{ I18n.locale = "pt-br" }
+      before{ I18n.locale = "pt-BR" }
       its(:description){ should == "Portuguese" }
     end
   end

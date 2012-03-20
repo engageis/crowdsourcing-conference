@@ -39,9 +39,10 @@ describe Profile do
     end
 
     context "portuguese" do
-      before{ I18n.locale = "pt-BR" }
+      before(:all){ I18n.locale = "pt-BR" }
       its(:bio){ should == "Portuguese" }
       its(:country){ should == "Portuguese" }
+      after(:all){ I18n.locale = I18n.default_locale }
     end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319162838) do
+ActiveRecord::Schema.define(:version => 20120320180325) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -62,6 +62,27 @@ ActiveRecord::Schema.define(:version => 20120319162838) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "payments", :force => true do |t|
+    t.string   "payer_name"
+    t.string   "payer_email"
+    t.string   "city"
+    t.string   "state"
+    t.string   "payment_method"
+    t.decimal  "total"
+    t.decimal  "net_amount"
+    t.decimal  "total_amount"
+    t.decimal  "service_tax_amount"
+    t.decimal  "backer_amount_tax"
+    t.string   "payment_status"
+    t.string   "service_code"
+    t.string   "institution_of_payment"
+    t.datetime "payment_date"
+    t.text     "key"
+    t.text     "payment_token"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
   create_table "profile_translations", :force => true do |t|
     t.integer  "profile_id"
     t.string   "locale"
@@ -107,7 +128,7 @@ ActiveRecord::Schema.define(:version => 20120319162838) do
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "type"
+    t.string   "kind"
     t.date     "birthday"
     t.string   "company"
     t.string   "role"
@@ -116,8 +137,11 @@ ActiveRecord::Schema.define(:version => 20120319162838) do
     t.string   "sex"
     t.string   "city"
     t.string   "state"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "paid",       :default => false, :null => false
+    t.datetime "paid_at"
+    t.integer  "payment_id"
   end
 
 end

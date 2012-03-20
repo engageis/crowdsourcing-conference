@@ -27,6 +27,7 @@ describe Schedule do
     context "portuguese" do
       before{ I18n.locale = "pt-BR" }
       its(:description){ should == "Portuguese" }
+      after{ I18n.locale = I18n.default_locale }
     end
   end
 end

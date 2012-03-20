@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'activeadmin'
 gem "paperclip"
+gem 'enumerate_it'
 
 # Payment
 gem 'moip', :git => 'git://github.com/joaomilho/moip-ruby.git'

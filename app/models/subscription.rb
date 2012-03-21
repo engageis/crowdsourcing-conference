@@ -4,6 +4,9 @@ class Subscription < ActiveRecord::Base
   validates :name, :kind, :birthday, :company, :role, :phone, :phone_cell, :sex, :city, :state, :payment, presence: true
   validates :email, presence: true, :format => {:with => Devise.email_regexp}
 
+  scope :confirmed, where(:paid => true)
+  scope :pending, where(:paid => false)
+
   def paid?
     paid
   end

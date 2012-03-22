@@ -1,0 +1,15 @@
+header
+  .wrapper
+    a.logo[href="#home"]
+      h1 Crowdsourcing Conference
+    .nav
+      .languages
+        = link_to "EN", root_path(locale: :en)
+        span
+        = link_to "PT", root_path(locale: "pt-BR")
+      ul
+        li = link_to t(:home), "#home"
+        li = link_to t(:schedule), "#schedule"
+        li = link_to t("subscription.subscription"), "#subscription"
+        li = link_to t(:editions), "#editions"
+        li = link_to t(:contact), "#contact"

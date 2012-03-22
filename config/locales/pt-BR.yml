@@ -2,7 +2,10 @@
 pt-BR:
   event: O evento
   schedule: Programação
-  subscription: #"Inscrição"
-      first_day: "Primeiro dia"
-      second_day: "Segundo dia"
-      two_days: "Os dois dias"
+  subscription:
+    subscription: "Inscrição"
+    first_day: "Primeiro dia"
+    second_day: "Segundo dia"
+    two_days: "Os dois dias"
+  editions: "Edições"
+  contact: "Contato"

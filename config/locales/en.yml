@@ -2,10 +2,13 @@ en:
   activerecord:
     models:
       event: The Event
-  subscription: #"Subscription"
+  subscription:
+      subscription: "Subscription"
       first_day: "First day"
       second_day: "Second day"
       two_days: "The two days"
+  editions: "Editions"
+  contact: "Contact"
 
   number:
     format:

@@ -101,3 +101,20 @@ def moip_query_response_with_array
     }
   }
 end
+
+
+def valid_subscription
+  {
+    name:        Faker::Name.name,
+    email:       Faker::Internet.email,
+    kind:        Subscription::KINDS[0],
+    birthday:    "1978-02-02",
+    company:     Faker::Company.name,
+    role:        Faker::Company.position,
+    phone:       "(00)0000-0000",
+    phone_cell:  "(00)0000-0000",
+    sex:         "M",
+    city:        Faker::Address.city,
+    state:       Faker::AddressUS.state
+  }
+end

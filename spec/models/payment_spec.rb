@@ -100,6 +100,29 @@ describe Payment do
     end
   end
 
+  describe "#fill_payer_details" do
+    before do
+      @payment = Payment.new
+      @payment.subscriptions.new valid_subscription
+    end
+    subject{ @payment }
+    
+    context "before call #fill_payer_details" do
+      its(:payer_name){ should be_nil }
+      its(:payer_email){ should be_nil }
+      its(:city){ should be_nil }
+      its(:state){ should be_nil }
+    end
+    context "after call #fill_payer_details" do
+      before{ subject.fill_payer_details }
+
+      its(:payer_name){ should_not be_nil }
+      its(:payer_email){ should_not be_nil }
+      its(:city){ should_not be_nil }
+      its(:state){ should_not be_nil }
+    end
+  end
+
   describe "key" do
     subject{ Payment.make! }
     its(:key){ should_not be_nil }

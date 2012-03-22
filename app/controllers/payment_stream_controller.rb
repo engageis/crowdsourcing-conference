@@ -8,6 +8,16 @@ class PaymentStreamController < ApplicationController
   end
 
   def thank_you
-    # TODO
+    if session[:_payment_token]
+      @payment = Payment.find_by_payment_token session[:_payment_token]
+      session[:_payment_token] = nil
+      if @payment
+        @payment.update_from_service
+      else
+        redirect_to :root
+      end  
+    else
+      redirect_to :root
+    end
   end
 end

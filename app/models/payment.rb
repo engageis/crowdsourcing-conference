@@ -72,4 +72,14 @@ class Payment < ActiveRecord::Base
   def display_payment_date
     I18n.l(payment_date, :format => :simple) if payment_date.present?
   end
+
+  def fill_payer_details
+    if subscriptions.first
+      subscription = subscriptions.first
+      self.payer_name = subscription.name
+      self.payer_email = subscription.email
+      self.city = subscription.city
+      self.state = subscription.state
+    end
+  end
 end

@@ -11,7 +11,7 @@ Payment.blueprint do
   payer_email         { Faker::Internet.email }
   city                { Faker::Address.city }
   state               { Faker::AddressUS.state }
-  total               { 99900 }
+  total               { 999.00 }
   payment_method      { 'BoletoBancario' }
   net_amount          { 979.63 }
   total_amount        { 999 }

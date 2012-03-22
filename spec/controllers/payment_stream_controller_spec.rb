@@ -58,4 +58,30 @@ describe PaymentStreamController do
       end
     end
   end
+
+  describe "/thank_you" do
+    context "with correct payment token" do
+      before(:each) do
+        @payment = Payment.make! :payment_token => 'ABCD'
+        subscription = Subscription.make! payment: @payment
+        request.session[:_payment_token] = 'ABCD'
+        MoIP::Client.stub(:query).with('ABCD').and_return(moip_query_response_with_array)
+        @payment.reload
+      end
+
+      it 'should response http success' do
+        get :thank_you
+        response.should render_template("payment_stream/thank_you")
+        response.should be_success
+      end
+    end
+
+    context "with incorrect payment token" do
+      before{ request.session[:_payment_token] = '12345678' }
+      it 'should redirect to root' do
+        get :thank_you
+        response.should redirect_to :root
+      end
+    end
+  end
 end

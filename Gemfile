@@ -27,10 +27,12 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+  gem 'bootstrap-sass'
 end
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.6.0"
+  gem "rspec-rails", "~> 2.9.0"
   gem "machinist"
   gem "database_cleaner"
   gem "shoulda-matchers"

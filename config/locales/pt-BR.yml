@@ -7,5 +7,20 @@ pt-BR:
     first_day: "Primeiro dia"
     second_day: "Segundo dia"
     two_days: "Os dois dias"
+    submit: "Efetuar Pagamento"
   editions: "Edições"
   contact: "Contato"
+  simple_form:
+    labels:
+      subscriptions:
+        name: "Nome"
+        birthday: "Data de Nascimento"
+        sex: "Sexo"
+        city: "Cidade"
+        state: "Estado"
+        company: "Empresa"
+        role: "Cargo"
+        phone: "Telefone Comercial"
+        phone_cell: "Celular"
+        kind: "Escola os dias que você quer se inscrever"
+        email: "E-mail"

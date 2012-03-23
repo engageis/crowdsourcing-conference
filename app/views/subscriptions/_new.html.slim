@@ -1,0 +1,7 @@
+= simple_form_for Payment.new, url: subscriptions_checkout_path do |f|
+  = f.input :total, as: :hidden, input_html: {value: 1}
+  .subscriptions
+    = render "subscriptions/form"
+    a.add[href="javascript:void(0)"] add
+
+  = f.button :submit, value: t("subscription.submit")

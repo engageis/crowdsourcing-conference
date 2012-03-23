@@ -2,11 +2,17 @@ en:
   activerecord:
     models:
       event: The Event
+  simple_form:
+    labels:
+      subscriptions:
+        email: "E-mail"
+
   subscription:
       subscription: "Subscription"
       first_day: "First day"
       second_day: "Second day"
       two_days: "The two days"
+      submit: "Make Payment"
   editions: "Editions"
   contact: "Contact"
 

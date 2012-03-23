@@ -19,6 +19,7 @@ gem 'inherited_resources'
 gem 'activeadmin'
 gem "paperclip"
 gem 'enumerate_it'
+gem 'simple_form'
 
 # Payment
 gem 'moip', :git => 'git://github.com/joaomilho/moip-ruby.git'

@@ -13,7 +13,7 @@ class SubscriptionsController < ApplicationController
     payment.total = params[:payment][:total]
     
     if payment.save
-      #begin
+      begin
         payer = {
            :nome => payment.payer_name,
            :email => payment.payer_email,
@@ -34,13 +34,15 @@ class SubscriptionsController < ApplicationController
          }
 
         response = MoIP::Client.checkout(payment_data)
-        #payment.update_attribute :payment_token, response["Token"]
-        #session[:_payment_token] = response["Token"]
-        #redirect_to MoIP::Client.moip_page(response["Token"])
-      # rescue
-      #   flash[:failure] = t('subscriptions.checkout.moip_error')
-      #   return redirect_to :root
-      # end
+        payment.update_attribute :payment_token, response["Token"]
+        session[:_payment_token] = response["Token"]
+        redirect_to MoIP::Client.moip_page(response["Token"])
+      rescue
+        flash[:failure] = t('subscriptions.checkout.moip_error')
+        return redirect_to :root
+      end
+    else
+      render "home/index"
     end
   end
 end

@@ -51,12 +51,6 @@ ActiveAdmin.register Subscription do
           row :payment_date
           row :key
         end
-
-        if subscription.payment.subscriptions.size > 1
-          for s in subscription.payment.subscriptions
-            row("Related Subscriptions"){ link_to s.name, admin_subscription_url(s)}
-          end
-        end
       end
     end
   end

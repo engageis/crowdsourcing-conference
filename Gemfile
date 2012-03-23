@@ -30,6 +30,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'compass-960-plugin'
 end
 
 group :development, :test do

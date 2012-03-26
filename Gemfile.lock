@@ -67,6 +67,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    compass-960-plugin (0.10.4)
+      compass (>= 0.10.0)
     compass-rails (1.0.1)
       compass (~> 0.12.0)
     crack (0.1.8)
@@ -227,6 +229,7 @@ DEPENDENCIES
   activeadmin
   bootstrap-sass
   coffee-rails (~> 3.2.1)
+  compass-960-plugin
   compass-rails
   database_cleaner
   enumerate_it

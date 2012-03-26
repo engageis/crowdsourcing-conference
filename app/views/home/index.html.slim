@@ -102,33 +102,36 @@ hr
           .bio
             p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país.
 
-    .info
-      .local
-        h2 Localização
-        p#address
-      .support
-        h2 Patrocínio
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-      .support
-        h2 Apoio
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
-        =image_tag('vivo.png', :class => "support_logos")
+  .info
+    .local
+      h2 Localização
+      p#address
+      iframe width="254" height="286" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=rio+de+janeiro,+cristo+redentor&amp;aq=&amp;sll=-14.239424,-53.186502&amp;sspn=50.981994,78.486328&amp;t=h&amp;ie=UTF8&amp;hq=rio+de+janeiro,+cristo+redentor&amp;ll=-22.951929,-43.210473&amp;spn=0.020549,0.032015&amp;output=embed 
+    .support
+      h2 Patrocínio
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+    .support
+      h2 Apoio
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
+      =image_tag('vivo.png', :class => "support_logos")
 
-      .midia
-        h2 CCS na mídia
+    .midia
+      h2 CCS na mídia
 
-      .social
-        h2 Compartilhe
+    .social
+      h2 Compartilhe
+      =image_tag("facebook.png", :class => "facebook_icon")
+      =image_tag("twitter.png", :class => "twitter_icon")
 
-      .twitter_feed
-        h2 Twitter - CCS2012
+    .twitter_feed
+      h2 Twitter - CCS2012
   .subscription
     h1 Inscreva-se
     = render "subscriptions/new"

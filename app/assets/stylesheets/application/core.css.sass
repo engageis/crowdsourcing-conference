@@ -1,3 +1,9 @@
+@import compass/css3/font-face
+
++font-face("din-medium", font-files("DIN-Medium.ttf", "fonts/DIN-Medium.eot"))
++font-face("din-bold", font-files("DIN-Bold.ttf", "fonts/DIN-Bold.eot"))
++font-face("din-light", font-files("DIN-Light.ttf", "fonts/DIN-Light.eot"))
+
 .wrapper
   width: 960px
   margin: auto
@@ -5,7 +11,7 @@
 body
   background: image-url("tile.png") 
   font-size: 62.5%
-  font-family: arial, sans-serif
+  font-family: "din-medium", arial, sans-serif
 
 a
   text-decoration: none
@@ -14,11 +20,13 @@ p
   font-family: arial, sans-serif
 
 h1
+  font-family: "din-medium", arial, sans-serif
   font-size: 2em
   color: black
   margin: 50px 0 20px 0
 
 h2
+  font-family: din-medium, arial, sans-serif
   font-size: 1.7em
   color: black
   margin: 10px 0 30px 10px
@@ -145,4 +153,23 @@ hr
   float: left
   width: 100%
 
-  
+.contact
+  background-color: black
+  border-top: 1px solid grey
+  h1
+    color: white
+    width: 30%
+    margin: 0
+  p.about
+    margin: 0
+    color: white
+    font-family: "Lora", serif
+    font-weight: 400
+    font-style: italic
+    font-size: 1.7em
+    width: 30%
+    line-height: 130%
+    
+  h4.email
+    color: white
+    float: right

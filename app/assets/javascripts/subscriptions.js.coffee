@@ -8,12 +8,13 @@ Subscription = Backbone.View.extend({
     "click .summaries .summary .remove a": "remove"
 
   add: ->
+    subscription_class = 'subscription_'+($('.subscriptions .subscription').size()+1)
     $('.subscriptions')
     .append(
       $('.subscriptions .subscription:first')
       .clone()
       .removeClass('subscription_1')
-      .addClass('subscription_'+($('.subscriptions .subscription').size()+1))
+      .addClass(subscription_class)
     )
     this.clear_subscription("subscription_"+$('.subscriptions .subscription').size())
     this.delegate_masks()
@@ -46,6 +47,8 @@ Subscription = Backbone.View.extend({
     subscription = _.last(that.parents(".summary").attr('class').split(' '))
     that.parents(".summary").remove()
     this.clear_subscription(subscription)
+    if subscription != "subscription_1"
+      $(".subscriptions .subscription."+subscription).remove()
     this.update_values()
 
   clear_subscription:(id) ->

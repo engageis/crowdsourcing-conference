@@ -1,32 +1,32 @@
 #Encoding: UTF-8
 class SubscriptionsController < ApplicationController
-  def checkout
-    payment = Payment.new
-    for subscription in params[:subscriptions]
-      subscription[:birthday] = subscription[:birthday].gsub /^(\d{2})\/(\d{2})\/(\d{4})$/, '\3-\2-\1'
-      payment.subscriptions.new(subscription.merge({payment: payment}))
-    end
-
-    if payment.subscriptions.first.valid? 
-      payment.fill_payer_details
-    end
-
-    payment.total = params[:payment][:total]
+  def checkout    
+    @payment = Payment.new params[:payment]
     
-    if payment.save
+    for subscription in @payment.subscriptions
+      subscription.payment = @payment
+    end
+
+    if @payment.subscriptions.first.valid? 
+      @payment.fill_payer_details
+    end
+
+    @payment.total = params[:payment][:total]
+    
+    if @payment.save
       begin
         payer = {
-           :nome => payment.payer_name,
-           :email => payment.payer_email,
-           :cidade => payment.city,
-           :estado => payment.state,
+           :nome => @payment.payer_name,
+           :email => @payment.payer_email,
+           :cidade => @payment.city,
+           :estado => @payment.state,
            :pais => "BRA",
-           :tel_fixo => payment.subscriptions.first.phone,
-           :tel_cel => payment.subscriptions.first.phone_cell
+           :tel_fixo => @payment.subscriptions.first.phone,
+           :tel_cel => @payment.subscriptions.first.phone_cell
          }
          payment_data = {
-           :valor => "%0.0f" % (payment.total),
-           :id_proprio => payment.key,
+           :valor => "%0.0f" % (@payment.total),
+           :id_proprio => @payment.key,
            :razao => "Inscrição no CCS12",
            :forma => "BoletoBancario",
            :dias_expiracao => 2,
@@ -35,7 +35,7 @@ class SubscriptionsController < ApplicationController
          }
 
         response = MoIP::Client.checkout(payment_data)
-        payment.update_attribute :payment_token, response["Token"]
+        @payment.update_attribute :payment_token, response["Token"]
         session[:_payment_token] = response["Token"]
         redirect_to MoIP::Client.moip_page(response["Token"])
       rescue

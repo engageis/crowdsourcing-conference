@@ -3,6 +3,7 @@ class Payment < ActiveRecord::Base
 
   has_many :subscriptions
   validates :payer_name, :payer_email, :city, :state, :total, presence: true
+  accepts_nested_attributes_for :subscriptions
 
   after_create :define_key
   def define_key

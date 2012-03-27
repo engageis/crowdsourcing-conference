@@ -3,6 +3,7 @@ class SubscriptionsController < ApplicationController
   def checkout
     payment = Payment.new
     for subscription in params[:subscriptions]
+      subscription[:birthday] = subscription[:birthday].gsub /^(\d{2})\/(\d{2})\/(\d{4})$/, '\3-\2-\1'
       payment.subscriptions.new(subscription.merge({payment: payment}))
     end
 
@@ -20,8 +21,8 @@ class SubscriptionsController < ApplicationController
            :cidade => payment.city,
            :estado => payment.state,
            :pais => "BRA",
-           :tel_fixo => "(51)9855-6298",
-           :tel_cel => "(51)9855-6298"
+           :tel_fixo => payment.subscriptions.first.phone,
+           :tel_cel => payment.subscriptions.first.phone_cell
          }
          payment_data = {
            :valor => "%0.0f" % (payment.total),

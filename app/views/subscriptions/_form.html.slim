@@ -1,13 +1,13 @@
 .subscription
   = simple_fields_for :subscriptions do |s|
-    = s.input :name, input_html: {name: "subscriptions[][name]"}
-    = s.input :birthday, input_html: {name: "subscriptions[][birthday]"}
-    = s.input :sex, input_html: {name: "subscriptions[][sex]"}, as: :radio, collection: [:M, :F]
+    = s.input :name, input_html: {name: "subscriptions[][name]", class: "subscription_name"}
+    = s.input :birthday, input_html: {name: "subscriptions[][birthday]", class: "birthday"}
+    = s.input :sex, input_html: {name: "subscriptions[][sex]"}, as: :radio_buttons, collection: [:M, :F]
     = s.input :city, input_html: {name: "subscriptions[][city]"}
     = s.input :state, input_html: {name: "subscriptions[][state]"}
     = s.input :company, input_html: {name: "subscriptions[][company]"}
     = s.input :role, input_html: {name: "subscriptions[][role]"}
     = s.input :email, input_html: {name: "subscriptions[][email]"}
-    = s.input :phone, input_html: {name: "subscriptions[][phone]"}
-    = s.input :phone_cell, input_html: {name: "subscriptions[][phone_cell]"}
-    = s.input :kind, input_html: {name: "subscriptions[][kind]"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten]
+    = s.input :phone, input_html: {name: "subscriptions[][phone]", class: "phone"}
+    = s.input :phone_cell, input_html: {name: "subscriptions[][phone_cell]", class: "phone"}
+    = s.input :kind, input_html: {name: "subscriptions[][kind]", class: "subscription_kind"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten], selected: Subscription::KINDS.first

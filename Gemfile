@@ -31,6 +31,7 @@ group :assets do
   gem 'compass-rails'
   gem 'bootstrap-sass'
   gem 'compass-960-plugin'
+  gem "rails-backbone"
 end
 
 group :development, :test do

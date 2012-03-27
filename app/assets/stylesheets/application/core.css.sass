@@ -1,5 +1,7 @@
 @import compass/css3/font-face
 
+$yellow: #FFCC33
+
 +font-face("din-medium", font-files("DIN-Medium.ttf", "fonts/DIN-Medium.eot"))
 +font-face("din-bold", font-files("DIN-Bold.ttf", "fonts/DIN-Bold.eot"))
 +font-face("din-light", font-files("DIN-Light.ttf", "fonts/DIN-Light.eot"))
@@ -18,6 +20,10 @@ a
 
 p
   font-family: arial, sans-serif
+
+h1, h2, h3, h4, h5, h6
+  color: black
+  text-transform: uppercase
 
 h1
   font-family: "din-medium", arial, sans-serif
@@ -62,9 +68,9 @@ header
     .languages
       text-align: right
       margin-top: 20px
-      color: #FFCC00
+      color: $yellow
       a
-        color: #FFCC00
+        color: $yellow
       span
         padding: 10px
         padding-top: 0
@@ -112,7 +118,7 @@ hr
     width: 70%
     h3#first_tab
       width: 10%
-      background-color: yellow
+      background-color: $yellow
       padding: 15px 10px
       //&:hover
     h3#second_tab

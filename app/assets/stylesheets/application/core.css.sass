@@ -1,8 +1,10 @@
 @import compass/css3/font-face
 
-+font-face("din-medium", font-files("DIN-Medium.ttf", "fonts/DIN-Medium.eot"))
-+font-face("din-bold", font-files("DIN-Bold.ttf", "fonts/DIN-Bold.eot"))
-+font-face("din-light", font-files("DIN-Light.ttf", "fonts/DIN-Light.eot"))
+$yellow: #FFCC33
+
++font-face("din-medium", font-files(asset_path("DIN-Medium.ttf", 'font')), asset_path("DIN-Medium.eot", 'font'))
++font-face("din-bold", font-files(asset_path("DIN-Bold.ttf", 'font')), asset_path("DIN-Bold.eot", 'font'))
++font-face("din-light", font-files("DIN-Light.ttf", "DIN-Light.eot"))
 
 .wrapper
   width: 960px
@@ -13,33 +15,29 @@ body
   font-size: 62.5%
   font-family: "din-medium", arial, sans-serif
 
+
 a
   text-decoration: none
 
 p
-  font-family: arial, sans-serif
+  font-family: din-medium, helvetica, arial, sans-serif
+
+h1, h2, h3, h4, h5, h6
+  color: black
+  text-transform: uppercase
+  font-family: din-medium, helvetica, arial, sans-serif
 
 h1
-  font-family: "din-medium", arial, sans-serif
-  font-size: 2em
-  color: black
-  margin: 50px 0 20px 0
+  font-size: 3em
+  margin: 40px 0 20px 0
 
 h2
-  font-family: din-medium, arial, sans-serif
   font-size: 1.7em
-  color: black
   margin: 10px 0 30px 10px
 
 h3
   font-size: 1.6em
-  color: black
-  margin: 10px 0 30px 10px
-
-h4
-  font-size: 1.4em
-  color: black
-  margin: 10px 0
+  margin: 10px 0 30px 0
 
 header
   height: 100px
@@ -49,7 +47,7 @@ header
     display: block
     width: 240px
     height: 80px
-    margin-top: 8px
+    margin-top: 1em
     float: left
     background: image-url("logo.png") no-repeat
 
@@ -61,10 +59,11 @@ header
 
     .languages
       text-align: right
-      margin-top: 20px
-      color: #FFCC00
+      margin-top: 2em
+      color: $yellow
+      font-size: 1.2em
       a
-        color: #FFCC00
+        color: $yellow
       span
         padding: 10px
         padding-top: 0
@@ -75,14 +74,21 @@ header
       margin-top: 20px
       list-style: none
       text-transform: uppercase
+      font-family: din-medium, helvetica, arial, sans-serif
+      font-size: 1.5em
       li
         float: left
-        padding-left: 30px
+        padding-left: 1.5em
         a
-          color: #fff
+          color: #999
+          padding: 5px 
+          &:hover
+            color: white
+            background-color: #333
 
 hr
-  border-bottom: 1px solid black
+  border-bottom: 0.05em solid #999
+  margin-top: 10px
 
 .banner
   height: 740px 
@@ -105,39 +111,74 @@ hr
     margin: 5em 0 4em 0
 
 .schedule
-  width: 100%
+  float: left
+  width: 70%
 
   .days, .talks
     float: left
-    width: 70%
-    h3#first_tab
-      width: 10%
-      background-color: yellow
-      padding: 15px 10px
-      //&:hover
-    h3#second_tab
-      //&:hover
+
+    h1
+      margin-bottom: 40px
+    
+    .first_tab
+      margin-right: 15px  
+    
+    a
+      padding: 8px 10px
+      cursor: pointer
+      font-size: 1.5em
+      text-transform: uppercase
+      background-color: #ccc
+
+      &:hover
+        background-color: black
+        color: white
+      &:active, .selected
+        background-color: $yellow
+        color: black
+      &:first-child
+        margin-right: 5px
+    
     table
-      margin-top: 15px
+      margin-top: 30px
       tr
         td
           padding: 10px 10px
         td
-          font-size: 1.4em
+          font-size: 1.6em
         td.time
           margin-right: 50px
+        td.event
+          width: 80%
+          line-height: 130%
       tr.odd
         background-color: white
   .box
     width: 45%
     float: left
-    margin: 30px 0 40px 0
+    margin: 30px 15px 40px 0
+    
+    h4.name
+      font-family: "din-bold", helvetica, arial, sans-serif
+      font-size: 2em
+      margin: 15px 0 25px
+
+    .bio
+      p
+        font-family: "Lora", serif
+        font-weight: 400
+        font-style: italic
+        font-size: 1.4em
+        line-height: 130%
+
+        
 
 .info
   width: 29%
   float: right
   background-color: white
-  border: 1px solid black
+  margin-top: 44px
+  border: 1px solid #ccc
 
   .local
   .support

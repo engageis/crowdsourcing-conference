@@ -83,4 +83,16 @@ class Payment < ActiveRecord::Base
       self.state = subscription.state
     end
   end
+  
+  def subscriptions_total
+    total = 0
+    for subscription in subscriptions
+      if subscription.kind.nil?
+       total += Subscription::VALUES[Subscription::KINDS.first]
+      else
+        total += Subscription::VALUES[subscription.kind]
+      end
+    end
+    total
+  end
 end

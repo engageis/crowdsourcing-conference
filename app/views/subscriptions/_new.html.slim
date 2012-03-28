@@ -1,11 +1,25 @@
-= simple_form_for @payment, url: subscriptions_checkout_path do |f|
+= simple_form_for @payment, url: "#{subscriptions_checkout_path}#subscription" do |f|
   = f.input :total, as: :hidden, input_html: {value: 0, class: "total"}
   .subscriptions
     = render "subscriptions/form", f: f
 
+  a.add.subscription[href="javascript:void(0)"] = t'subscription.add'
+  h2 = t'subscription.summary'
   .summaries
+    - for subscription in @payment.subscriptions
+      .summary.subscription_1
+        .name = subscription.name
+        .value
+          | R$: 
+          span
+            - if subscription.kind.nil?
+              = Subscription::VALUES[Subscription::KINDS.first]
+            - else
+              = Subscription::VALUES[subscription.kind]
+        .remove
+          a href="javascript:void()" = t'subscription.remove'
   .subtotal 
     | Subtotal: R$ 
     span
-  a.add.subscription[href="javascript:void(0)"] add
+      = @payment.subscriptions_total
   = f.button :submit, value: t("subscription.submit")

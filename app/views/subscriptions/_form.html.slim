@@ -10,4 +10,5 @@
     = s.input :email
     = s.input :phone, input_html: {class: "phone"}
     = s.input :phone_cell, input_html: {class: "phone"}
-    = s.input :kind, input_html: {class: "subscription_kind"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten], selected: Subscription::KINDS.first
+    = s.input :kind, input_html: {class: "subscription_kind"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten]
+    

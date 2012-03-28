@@ -13,8 +13,18 @@ en:
       second_day: "Second day"
       two_days: "The two days"
       submit: "Make Payment"
+      summary: "Summary of purchase"
+      add: "Make another subscription"
+      remove: "Remove"
   editions: "Editions"
   contact: "Contact"
+  simple_form:
+    labels:
+      subscriptions:
+        phone: "Business Phone"
+        phone_cell: "Cell"
+        kind: "Choose the days you want to register"
+        email: "E-mail"
 
   number:
     format:

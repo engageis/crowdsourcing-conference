@@ -19,6 +19,12 @@ Subscription = Backbone.View.extend({
     this.clear_subscription("subscription_"+$('.subscriptions .subscription').size())
     this.delegate_masks()
 
+    this.change_inputs_name('.subscriptions .subscription.' + subscription_class)
+
+  change_inputs_name:(selector) ->
+    $(selector + ' input, ' + selector + ' select').each ->
+      $(this).attr('name', $(this).attr('name').replace("payment[subscriptions_attributes][0]", "payment[subscriptions_attributes]["+($('.subscriptions .subscription').size()-1)+"]"))
+
   update_values: ->
     that = this
     total = 0
@@ -35,11 +41,19 @@ Subscription = Backbone.View.extend({
     $('.summary.' + subscription).remove();
 
     this.update_values()
-    summary = $('<div>').addClass('summary').addClass(subscription)
-    summary.append($('<div>').addClass('name').append(that.val()))
-    summary.append($('<div>').addClass('value').append('R$: ').append($('<span>')))
-    summary.append($('<div>').addClass('remove').append($('<a href="javascript:void()">').append('Remover')))
-    $('.summaries').append(summary)
+
+    $('.summaries').append(
+      $('<div>').addClass('summary').addClass(subscription)
+      .append(
+        $('<div>').addClass('name').append(that.val())
+      )
+      .append(
+        $('<div>').addClass('value').append('R$: ').append($('<span>'))
+      )
+      .append(
+        $('<div>').addClass('remove').append($('<a href="javascript:void()">').append(I18n.remove))
+      )
+    )
     this.update_values()
 
   remove:(that) ->

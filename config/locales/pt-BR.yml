@@ -3,11 +3,14 @@ pt-BR:
   event: O evento
   schedule: Programação
   subscription:
-    subscription: "Inscrição"
+    subscription: "Inscreva-se"
     first_day: "Primeiro dia"
     second_day: "Segundo dia"
     two_days: "Os dois dias"
     submit: "Efetuar Pagamento"
+    summary: "Resumo da compra"
+    add: "Fazer mais um inscrição"
+    remove: "Remover"
   editions: "Edições"
   contact: "Contato"
   simple_form:
@@ -22,5 +25,5 @@ pt-BR:
         role: "Cargo"
         phone: "Telefone Comercial"
         phone_cell: "Celular"
-        kind: "Escola os dias que você quer se inscrever"
+        kind: "Escolha os dias que você quer se inscrever"
         email: "E-mail"

@@ -19,7 +19,7 @@ $(document).ready(function() {
 jQuery.fn.anchorAnimate = function(settings) {
 
  	settings = jQuery.extend({
-		speed : 1100
+		speed : 300
 	}, settings);	
 	
 	return this.each(function(){

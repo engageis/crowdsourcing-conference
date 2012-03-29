@@ -20,6 +20,7 @@ gem 'activeadmin'
 gem "paperclip"
 gem 'enumerate_it'
 gem 'simple_form'
+gem 'auto_html'
 
 # Payment
 gem 'moip', :git => 'git://github.com/joaomilho/moip-ruby.git'

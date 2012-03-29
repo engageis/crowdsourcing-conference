@@ -1,6 +1,6 @@
 #Encoding: UTF-8
 class SubscriptionsController < ApplicationController
-  def checkout    
+  def checkout
     @payment = Payment.new params[:payment]
     
     for subscription in @payment.subscriptions
@@ -43,6 +43,7 @@ class SubscriptionsController < ApplicationController
         return redirect_to :root
       end
     else
+      index_page
       render "home/index"
     end
   end

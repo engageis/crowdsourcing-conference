@@ -1,0 +1,10 @@
+.days
+  h1 = t'schedule'
+
+  a.first_tab = t'subscription.first_day'
+  a.second_tab = t'subscription.second_day'
+
+  #first_day
+    = render 'schedules/list', schedules: Schedule.first_day
+  #second_day
+    = render 'schedules/list', schedules: Schedule.second_day

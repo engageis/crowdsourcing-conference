@@ -13,6 +13,18 @@ pt-BR:
     remove: "Remover"
   editions: "Edições"
   contact: "Contato"
+  location: "Localização"
+  share: "Compartilhe"
+  media: "CCS na mídia"
+  support: "Apoio"
+  sponsors: "Patrocínio"
+  speakers: "Palestrantes"
+  workshops: "Workshops"
+  
+  descriptions:
+    contact:
+      text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
+  
   simple_form:
     labels:
       subscriptions:

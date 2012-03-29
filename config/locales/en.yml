@@ -18,6 +18,18 @@ en:
       remove: "Remove"
   editions: "Editions"
   contact: "Contact"
+  location: "Location"
+  share: "Share"
+  media: "CCS in the media"
+  support: "Support"
+  sponsors: "Sponsors"
+  speakers: "Speakers"
+  workshops: "Workshops"
+
+  descriptions:
+    contact:
+      text: "Your company is interested in sponsoring an international event for Open Innovation and Crowdsourcing?"
+
   simple_form:
     labels:
       subscriptions:

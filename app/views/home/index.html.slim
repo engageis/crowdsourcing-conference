@@ -1,150 +1,26 @@
 .wrapper
-  .banner
-    .ccs12
-      =image_tag("ccs12.png", :class => 'ccs_logo') 
-    
-      p.about
-        | O futuro das ideias, inovação e criatividade. As alterações no ambiente da nova economia, a mobilidade dos ambientes de trabalho, conectividade e mídias sociais estão levando o crowdsourcing a ser um fenômeno do século 21. O conceito 
-        b crowdsourcing 
-        | já encontra no mercado  brasileiro seus primeiros cases concretos que aplicam o modelo de produção coletivo e voluntário via internet para resolver problemas, criar conteúdo e soluções.  
-      p.about
-        | “É uma quebra na forma histórica de pensar o desenvolvimento de produtos e soluções. Seria impossível imaginar há dez anos que empresas abririam espaço para que pessoas decidissem como um produto seria projetado. Isso tem mudado a forma como as decisões internas são tomadas. Há mais democracia nos processos” Shaun Abrahanson
-      p.about
-        | Na segunda edição da Conferência vamos trazer especialistas que vão falar como a colaboração e crowdsourcing são  o futuro da propaganda, dos negócios e da sociedade como um toda.Wikipedia, Amazon e Google; são companhias globais que cresceram a partir da colaboração dos internautas. É a prova de que o modelo é bem-sucedido.
+  = render 'home/ccs12'
+hr
 
-      =image_tag("mutopo.jpg", :class => 'mutopo_logo')
-
-    .map
-      =image_tag("map.png", :class => 'main_map')
-hr  
-  
+a name="schedule"
 .wrapper
   .schedule
-    .days
-      h1 Programação
-
-      a.first_tab first day
-      a.second_tab second day
-      table
-        tr.odd
-          td.time 8:00 às 8:45
-          td.event Acreditation
-        tr.even
-          td.time 8:45 às 9:00
-          td.event Fecomercio e Shaun open
-        tr.odd
-          td.time 9:30 às 10:30
-          td.event What is the business impact of crowdsourcing, co-creation and Colaboration - Shaun
-        tr.even
-          td.time 8:45 às 9:00
-          td.event Fecomercio e Shaun open
-        tr.odd
-          td.time 8:00 às 8:45
-          td.event Acreditation
-        tr.even
-          td.time 8:45 às 9:00
-          td.event Fecomercio e Shaun open
-        tr.odd
-          td.time 8:00 às 8:45
-          td.event Acreditation
-        tr.even
-          td.time 8:45 às 9:00
-          td.event Fecomercio e Shaun open
-        tr.odd
-          td.time 8:00 às 8:45
-          td.event Acreditation
-        tr.even
-          td.time 8:45 às 9:00
-          td.event Fecomercio e Shaun open
-        tr.odd
-          td.time 8:00 às 8:45
-          td.event Acreditation
-        tr.even
-          td.time 8:45 às 9:00
-          td.event Fecomercio e Shaun open
+    = render 'schedules/index'
     hr
-    .talks
-      
-      a.talks_tab Talks
-      a.workshops_tab Workshops
+    = render 'profiles/index'
 
-      #talks
-        .box
-          =image_tag("man01.png", :class => "profile")
-          h4.name Abel Reis
-          .bio
-            p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país.
+  = render 'home/infos'
 
-        .box
-          =image_tag("man01.png", :class => "profile")
-          h4.name Abel Reis
-          .bio
-            p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país.
-        .box
-          =image_tag("man01.png", :class => "profile")
-          h4.name Abel Reis
-          .bio
-            p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país.
-        .box
-          =image_tag("man01.png", :class => "profile")
-          h4.name Abel Reis
-          .bio
-            p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país. 
-
-      //#workshops
-        .box
-          =image_tag("man01.png", :class => "profile")
-          h4.name Abel Reis
-          .bio
-            p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país.
-      
-        //.box
-          =image_tag("man01.png", :class => "profile")
-          h4.name Abel Reis
-          .bio
-            p Presidente da AgênciaClick Isobar e COO da Isobar Brasil – Doutorando em Comunicação e Semiótica pela PUC-SP. M.Sc. em Engenharia de Sistemas pela COPPE/UFRJ. Bacharel em Informática e Filosofia. Por dois anos, selecionado pela InfoExame como um dos top 100 profissionais de tecnologia no Brasil e eleito um dos 50 profissionais de tecnologia da informação mais respeitados do país.
-
-  .info
-    .local
-      h2 Localização
-      p#address
-      iframe width="254" height="286" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=rio+de+janeiro,+cristo+redentor&amp;aq=&amp;sll=-14.239424,-53.186502&amp;sspn=50.981994,78.486328&amp;t=h&amp;ie=UTF8&amp;hq=rio+de+janeiro,+cristo+redentor&amp;ll=-22.951929,-43.210473&amp;spn=0.020549,0.032015&amp;output=embed"
-    .support
-      h2 Patrocínio
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-    .support
-      h2 Apoio
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-      =image_tag('vivo.png', :class => "support_logos")
-
-    .midia
-      h2 CCS na mídia
-
-    .social
-      h2 Compartilhe
-      =image_tag("facebook.png", :class => "facebook_icon")
-      =image_tag("twitter.png", :class => "twitter_icon")
-
-    .twitter_feed
-      h2 Twitter - CCS2012
   .subscription
     a name="subscription"
     h1 = t'subscription.subscription'
     = render "subscriptions/new"
 
-
   //.editions
 .contact
   .wrapper
-    h1 Contato
+    a name="contact"
+    h1 = t'contact'
     p.about
-      | Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing? 
+      = t'descriptions.contact.text'
     h4.email marina.miranda@gmail.com
-

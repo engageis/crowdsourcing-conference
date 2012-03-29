@@ -1,0 +1,7 @@
+table
+  - i = 0
+  - for schedule in schedules
+  - i += 1
+    tr[class=(i.odd? ? 'odd' : 'even')]
+      td.time = schedule.time.strftime '%H:%M'
+      td.event = schedule.description

@@ -5,6 +5,9 @@ class Schedule < ActiveRecord::Base
   accepts_nested_attributes_for :schedule_translations, :allow_destroy => true
   after_initialize :build_translations
 
+  scope :first_day, where(day: 1)
+  scope :second_day, where(day: 2)
+
   protected
   def build_translations
     if schedule_translations.empty?

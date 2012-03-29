@@ -1,4 +1,4 @@
-Subscription = Backbone.View.extend({
+Subscriptions = Backbone.View.extend({
   VALUE: {'subscription.first_day': 300, 'subscription.second_day': 300, 'subscription.two_days': 500}
 
   events:
@@ -8,7 +8,8 @@ Subscription = Backbone.View.extend({
     "click .summaries .summary .remove a": "remove"
 
   add: ->
-    subscription_class = 'subscription_'+($('.subscriptions .subscription').size()+1)
+    size = $('.subscriptions .subscription').size()
+    subscription_class = 'subscription_'+(size+1)
     $('.subscriptions')
     .append(
       $('.subscriptions .subscription:first')
@@ -16,14 +17,16 @@ Subscription = Backbone.View.extend({
       .removeClass('subscription_1')
       .addClass(subscription_class)
     )
-    this.clear_subscription("subscription_"+$('.subscriptions .subscription').size())
+    this.clear_subscription(subscription_class)
     this.delegate_masks()
 
     this.change_inputs_name('.subscriptions .subscription.' + subscription_class)
+    this.html_summary(subscription_class, null)
 
   change_inputs_name:(selector) ->
+    size = $('.subscriptions .subscription').size()
     $(selector + ' input, ' + selector + ' select').each ->
-      $(this).attr('name', $(this).attr('name').replace("payment[subscriptions_attributes][0]", "payment[subscriptions_attributes]["+($('.subscriptions .subscription').size()-1)+"]"))
+      $(this).attr('name', $(this).attr('name').replace("payment[subscriptions_attributes][0]", "payment[subscriptions_attributes]["+(size-1)+"]"))
 
   update_values: ->
     that = this
@@ -39,13 +42,14 @@ Subscription = Backbone.View.extend({
     that = $(that.target)
     subscription = this.get_subscription_class(that)
     $('.summary.' + subscription).remove();
-
+    this.html_summary(subscription, that.val())
     this.update_values()
 
+  html_summary:(subscription, name) ->
     $('.summaries').append(
       $('<div>').addClass('summary').addClass(subscription)
       .append(
-        $('<div>').addClass('name').append(that.val())
+        $('<div>').addClass('name').append(name)
       )
       .append(
         $('<div>').addClass('value').append('R$: ').append($('<span>'))
@@ -54,7 +58,6 @@ Subscription = Backbone.View.extend({
         $('<div>').addClass('remove').append($('<a href="javascript:void()">').append(I18n.remove))
       )
     )
-    this.update_values()
 
   remove:(that) ->
     that = $(that.target)
@@ -75,7 +78,10 @@ Subscription = Backbone.View.extend({
     $(".phone").mask("(99)9999-9999");
 
   initialize: ->
-    $('.subscriptions .subscription:first').addClass('subscription_1')
+    i = 0
+    $('.subscriptions .subscription').each ->
+      i += 1
+      $(this).addClass('subscription_'+i)
     this.delegate_masks()
 
   get_subscription_class: (that)->
@@ -83,4 +89,4 @@ Subscription = Backbone.View.extend({
 })
 
 jQuery ->
-  window.view = new Subscription({el: $("body") });
+  window.view = new Subscriptions({el: $("body") });

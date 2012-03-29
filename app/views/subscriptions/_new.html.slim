@@ -6,8 +6,10 @@
   a.add.subscription[href="javascript:void(0)"] = t'subscription.add'
   h2 = t'subscription.summary'
   .summaries
+    - i = 0
     - for subscription in @payment.subscriptions
-      .summary.subscription_1
+      - i += 1
+      .summary[class="subscription_#{i}"]
         .name = subscription.name
         .value
           | R$: 

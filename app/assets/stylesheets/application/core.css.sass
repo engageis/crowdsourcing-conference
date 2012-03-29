@@ -98,7 +98,7 @@ hr
     .ccs_logo
       margin: 5em 0 7em 0
 
-    p.about
+    p.about, p
       font-family: 'Lora', serif
       font-weight: 400
       font-style: italic
@@ -114,8 +114,13 @@ hr
   float: left
   width: 70%
 
-  .days, .talks
+  hr
+    clear: both
+  .days, .profiles
     float: left
+    
+    #second_day
+      display: none
 
     h1
       margin-bottom: 40px
@@ -170,8 +175,9 @@ hr
         font-style: italic
         font-size: 1.4em
         line-height: 130%
+  #workshops
+    display: none
 
-        
 
 .info
   width: 29%
@@ -189,6 +195,9 @@ hr
     .twitter_icon
       margin-left: 30px
   .twitter_feed
+    padding-bottom: 20px
+    .twtr-widget
+      margin-left: 14px
 
 .subscription, .contact
   float: left

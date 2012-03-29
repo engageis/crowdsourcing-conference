@@ -9,6 +9,9 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :profile_translations, :allow_destroy => true
   after_initialize :build_translations
 
+  scope :speakers, where(kind: "Speaker")
+  scope :workshops, where(kind: "Workshop")
+
   protected
   def build_translations
     if profile_translations.empty?

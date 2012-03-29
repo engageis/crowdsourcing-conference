@@ -15,7 +15,7 @@ class PaymentStreamController < ApplicationController
         @payment.update_from_service
       else
         redirect_to :root
-      end  
+      end
     else
       redirect_to :root
     end

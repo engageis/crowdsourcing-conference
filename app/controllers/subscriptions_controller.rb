@@ -2,17 +2,20 @@
 class SubscriptionsController < ApplicationController
   def checkout
     @payment = Payment.new params[:payment]
-    
+
+    total = 0
+    names = []
     for subscription in @payment.subscriptions
       subscription.payment = @payment
+      total += Subscription::VALUES[subscription.kind]
+      names << subscription.name.split(' ').first
     end
 
     if @payment.subscriptions.first.valid? 
       @payment.fill_payer_details
     end
 
-    @payment.total = params[:payment][:total]
-    
+    @payment.total = total
     if @payment.save
       begin
         payer = {
@@ -27,7 +30,7 @@ class SubscriptionsController < ApplicationController
          payment_data = {
            :valor => "%0.0f" % (@payment.total),
            :id_proprio => @payment.key,
-           :razao => "Inscrição no CCS12",
+           :razao => "#{t('subscription.checkout.message')} (#{names.join(', ')})",
            :forma => "BoletoBancario",
            :dias_expiracao => 2,
            :pagador => payer,
@@ -39,7 +42,7 @@ class SubscriptionsController < ApplicationController
         session[:_payment_token] = response["Token"]
         redirect_to MoIP::Client.moip_page(response["Token"])
       rescue
-        flash[:failure] = t('subscriptions.checkout.moip_error')
+        flash[:failure] = t('subscription.checkout.moip_error')
         return redirect_to :root
       end
     else

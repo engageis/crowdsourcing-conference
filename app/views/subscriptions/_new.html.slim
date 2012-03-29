@@ -1,3 +1,7 @@
+- if flash[:failure]
+  .moip_error
+    p = flash[:failure]
+
 = simple_form_for @payment, url: "#{subscriptions_checkout_path}#subscription" do |f|
   = f.input :total, as: :hidden, input_html: {value: 0, class: "total"}
   .subscriptions

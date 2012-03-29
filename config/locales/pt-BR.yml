@@ -11,6 +11,9 @@ pt-BR:
     summary: "Resumo da compra"
     add: "Fazer mais um inscrição"
     remove: "Remover"
+    checkout:
+      moip_error: "Ooops. Ocorreu um erro ao enviar seu pagamento para o MoIP. Por favor, tente novamente."
+      message: "Inscrição no CCS12"
   editions: "Edições"
   contact: "Contato"
   info:
@@ -21,6 +24,10 @@ pt-BR:
     sponsors: "Patrocínio"
   speakers: "Palestrantes"
   workshops: "Workshops"
+  thank_you:
+    title: "Obrigado por fazer parte deste evento"
+    text: "Você receberá uma confirmação do pagamento por e-mail."
+    back_to_home: "Voltar para a página inicial"
   
   descriptions:
     contact:

@@ -16,6 +16,9 @@ en:
       summary: "Summary of purchase"
       add: "Make another subscription"
       remove: "Remove"
+      checkout:
+        moip_error: "Ooops. There was an error while sending your payment to MoIP. Please try again."
+        message: "Subscription CCS12"
   editions: "Editions"
   contact: "Contact"
   info:
@@ -26,6 +29,10 @@ en:
     sponsors: "Sponsors"
   speakers: "Speakers"
   workshops: "Workshops"
+  thank_you:
+    title: "Thanks for being part of this event"
+    text: "You will receive a payment confirmation by email."
+    
 
   descriptions:
     contact:

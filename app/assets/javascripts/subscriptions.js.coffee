@@ -1,5 +1,5 @@
 Subscriptions = Backbone.View.extend({
-  VALUE: {'subscription.first_day': 300, 'subscription.second_day': 300, 'subscription.two_days': 500}
+  VALUES: {'subscription.first_day': 300, 'subscription.second_day': 300, 'subscription.two_days': 500}
 
   events:
     "click a.subscription.add": "add"
@@ -33,8 +33,8 @@ Subscriptions = Backbone.View.extend({
     total = 0
     $('.subscriptions .subscription .subscription_kind').each ->
       subscription = that.get_subscription_class($(this))
-      $(".summaries .summary."+subscription+" .value span").html(that.VALUE[this.value])
-      total = total + that.VALUE[this.value]
+      $(".summaries .summary."+subscription+" .value span").html(that.VALUES[this.value])
+      total = total + that.VALUES[this.value]
     $('form.new_payment .total').val(total)
     $('form.new_payment .subtotal span').html(total)
 

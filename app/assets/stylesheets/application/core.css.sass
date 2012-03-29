@@ -1,4 +1,4 @@
-@import compass/css3/font-face
+@import compass/css3
 
 $yellow: #FFCC33
 
@@ -29,18 +29,18 @@ h1, h2, h3, h4, h5, h6
 
 h1
   font-size: 3em
-  margin: 40px 0 20px 0
+  margin: 1.4em 0 1em 0
 
 h2
   font-size: 1.7em
-  margin: 10px 0 30px 10px
+  margin: 1em 0 1.3em 1em
 
 h3
   font-size: 1.6em
-  margin: 10px 0 30px 0
+  margin: 1em 0 1.3em 0
 
 header
-  height: 100px
+  height: 10em
   background: #000
 
   a.logo
@@ -63,7 +63,10 @@ header
       color: $yellow
       font-size: 1.2em
       a
+        +opacity(0.8)
         color: $yellow
+        &:hover
+          +opacity(1)
       span
         padding: 10px
         padding-top: 0
@@ -87,7 +90,7 @@ header
             background-color: #333
 
 hr
-  border-bottom: 0.05em solid #999
+  border-bottom: 0.05em solid #ccc
   margin-top: 10px
 
 .banner
@@ -129,7 +132,7 @@ hr
       margin-right: 15px  
     
     a
-      padding: 8px 10px
+      padding: 0.8em 1em
       cursor: pointer
       font-size: 1.5em
       text-transform: uppercase
@@ -187,13 +190,16 @@ hr
   border: 1px solid #ccc
 
   .local
+    iframe
+      margin-left: 1.2em
+
   .support
   .midia
   .social
     .facebook_icon
-      margin-left: 10px
+      margin-left: 1.8em
     .twitter_icon
-      margin-left: 30px
+      margin-left: 2em
   .twitter_feed
     padding-bottom: 20px
     .twtr-widget
@@ -206,20 +212,29 @@ hr
 .contact
   background-color: black
   border-top: 1px solid grey
+  height: 20em
+  margin-top: 2em
   h1
     color: white
     width: 30%
     margin: 0
-  p.about
-    margin: 0
-    color: white
-    font-family: "Lora", serif
-    font-weight: 400
-    font-style: italic
-    font-size: 1.7em
-    width: 30%
-    line-height: 130%
-    
-  h4.email
-    color: white
-    float: right
+    margin-top: 1em
+    margin-bottom: 0.8em
+
+  .what
+    p
+      margin: 0
+      color: white
+      font-family: "Lora", serif
+      font-weight: 400
+      font-style: italic
+      font-size: 1.7em
+      width: 30%
+      line-height: 130%
+      float: left
+      
+    em.email
+      font-family: "din-medium", helvetica, arial, sans-serif
+      font-size: 3em
+      color: white
+      float: right

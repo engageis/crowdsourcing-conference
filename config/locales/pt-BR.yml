@@ -13,11 +13,12 @@ pt-BR:
     remove: "Remover"
   editions: "Edições"
   contact: "Contato"
-  location: "Localização"
-  share: "Compartilhe"
-  media: "CCS na mídia"
-  support: "Apoio"
-  sponsors: "Patrocínio"
+  info:
+    location: "Localização"
+    share: "Compartilhe"
+    media: "CCS na mídia"
+    support: "Apoio"
+    sponsors: "Patrocínio"
   speakers: "Palestrantes"
   workshops: "Workshops"
   

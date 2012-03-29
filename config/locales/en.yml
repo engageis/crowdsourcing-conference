@@ -18,11 +18,12 @@ en:
       remove: "Remove"
   editions: "Editions"
   contact: "Contact"
-  location: "Location"
-  share: "Share"
-  media: "CCS in the media"
-  support: "Support"
-  sponsors: "Sponsors"
+  info:
+    location: "Location"
+    share: "Share"
+    media: "CCS in the media"
+    support: "Support"
+    sponsors: "Sponsors"
   speakers: "Speakers"
   workshops: "Workshops"
 

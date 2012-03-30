@@ -48,6 +48,6 @@ group :production do
   gem "therubyracer"
 end
 
-group :development do
+group :development, :production do
   gem "thin"
 end

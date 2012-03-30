@@ -4,6 +4,7 @@ class Schedule < ActiveRecord::Base
   validates :day, :time, presence: true
   accepts_nested_attributes_for :schedule_translations, :allow_destroy => true
   after_initialize :build_translations
+  default_scope :order => 'time ASC'
 
   scope :first_day, where(day: 1)
   scope :second_day, where(day: 2)

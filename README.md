@@ -21,7 +21,9 @@ Run the tests
 Start the Server
   `rails server`
 
-Setting the variables
+Setting the environment variables
 ---------------------
-  for heroku
+  create this file https://github.com/softa/ccs12/blob/f4c92725354fb5389c7ce51acc3d5fece68e766e/config/heroku.yml in config/heroku.yml
+
+  To export the settings to Heroku, run:
     `thor -T`

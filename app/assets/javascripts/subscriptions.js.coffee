@@ -70,10 +70,13 @@ Subscriptions = Backbone.View.extend({
   remove:(that) ->
     that = $(that.target)
     subscription = _.last(that.parents(".summary").attr('class').split(' '))
-    that.parents(".summary").remove()
     this.clear_subscription(subscription)
+
     if subscription != "subscription_1"
       $(".subscriptions .subscription."+subscription).remove()
+      that.parents(".summary").remove()
+    else
+      $('.subscriptions .subscription.'+subscription+' .subscription_name').change()
     this.update_values()
 
   clear_subscription:(id) ->

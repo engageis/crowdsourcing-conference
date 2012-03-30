@@ -3,27 +3,44 @@
     h2 = t'info.location'
     p#address
     iframe width="254" height="286" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Av.+Dr.+Chucri+Zaidan,+860+%E2%80%93+Morumbi+%E2%80%93+S%C3%A3o+Paulo+%E2%80%93+SP.&amp;aq=&amp;sll=-23.562344,-46.654796&amp;sspn=0.395261,0.617294&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Av.+Dr.+Chucri+Zaidan,+860+-+Itaim+Bibi,+S%C3%A3o+Paulo,+04583-110,+Brazil&amp;ll=-23.617396,-46.69713&amp;spn=0.022491,0.021715&amp;z=14&amp;output=embed"
-  .support
+
+  .presentation
+    hr
+    h2 = t'info.presentation'
+    =image_tag('infos/fecomercio_sp.png', :class => "support_logos")
+
+  .sponsors
     hr
     h2 = t'info.sponsors'
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
+    =image_tag('infos/sponsors_fecomercio_sp.jpg', :class => "support_logos")
+    =image_tag('infos/sponsors_tecnisa.jpg', :class => "support_logos")
 
   .support
     hr
     h2 = t'info.support'
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
-    =image_tag('vivo.png', :class => "support_logos")
+    table
+      tbody
+        tr
+          td = link_to image_tag('infos/engage.png'), 'http://engage.is'
+          td = link_to image_tag('infos/catarse.png'), 'http://catarse.me'
+        tr
+          td = image_tag('infos/ledface.jpg')
+          td = image_tag('infos/zebrabold.jpg')
+        tr
+          td = image_tag('infos/moip.png')
+          td = image_tag('infos/ruffles.jpg')
 
-  .midia
+  .midia.clear
     hr
     h2 = t'info.media'
+    table
+      tbody
+        tr
+          td =image_tag('infos/tnw.jpg')
+          td =image_tag('infos/proxxima.jpg')
+        tr
+          td =image_tag('infos/imasters.jpg')
+          td =image_tag('infos/sbgc.jpg')
 
   .social
     hr

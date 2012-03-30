@@ -25,9 +25,10 @@ en:
   info:
     location: "Location"
     share: "Share"
-    media: "CCS in the media"
+    media: "Partners in the media"
     support: "Support"
     sponsors: "Sponsors"
+    presentation: "Presentation"
   speakers: "Speakers"
   workshops: "Workshops"
   thank_you:

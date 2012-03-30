@@ -1,5 +1,5 @@
 Ccs12::Application.routes.draw do
-  filter :locale
+  #filter :locale
 
   match 'subscriptions/checkout' => 'subscriptions#checkout', :via => :post
   match "/moip" => "payment_stream#moip", :as => :moip

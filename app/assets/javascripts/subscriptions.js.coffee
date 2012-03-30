@@ -3,8 +3,8 @@ Subscriptions = Backbone.View.extend({
 
   events:
     "click a.add": "add"
-    "change .subscriptions .subscription .subscription_kind": "update_values"
-    "change .subscriptions .subscription .subscription_name": "add_summary"
+    "change .subscriptions .subscription .subscription_kind": "update_summary"
+    "change .subscriptions .subscription .subscription_name": "update_summary"
     "click .summaries .summary .remove a": "remove"
 
   add: ->
@@ -26,7 +26,7 @@ Subscriptions = Backbone.View.extend({
     this.delegate_masks()
 
     this.change_inputs_name('.subscriptions .subscription.' + subscription_class)
-    this.html_summary(subscription_class, null)
+    $('.summaries').append(this.html_summary(subscription_class, null))
 
   change_inputs_name:(selector) ->
     size = $('.subscriptions .subscription').size()
@@ -43,30 +43,28 @@ Subscriptions = Backbone.View.extend({
     $('form.new_payment .total').val(total)
     $('form.new_payment .subtotal span').html(total)
 
-  add_summary:(that) ->
+  update_summary:(that) ->
     that = $(that.target)
     subscription = this.get_subscription_class(that)
-    $('.summary.' + subscription).remove();
-    this.html_summary(subscription, that.val())
+    name = $('.subscriptions .subscription.'+subscription+' .subscription_name').val()
+    $('.summary.' + subscription).replaceWith(this.html_summary(subscription, name))
     this.update_values()
 
   html_summary:(subscription, name) ->
-    $('.summaries').append(
-      $('<div>').addClass('summary').addClass(subscription)
-      .append(
-        $('<div>').addClass('name').append(name)
+    $('<div>').addClass('summary').addClass(subscription)
+    .append(
+      $('<div>').addClass('name').append(name)
+    )
+    .append(
+      $('<div>').addClass('description').append(
+        $('option[value="'+$('.subscriptions .subscription.'+subscription+' .subscription_kind').val()+'"]').html()
       )
-      .append(
-        $('<div>').addClass('description').append(
-          $('option[value="'+$('.subscriptions .subscription.'+subscription+' .subscription_kind').val()+'"]').html()
-        )
-      )
-      .append(
-        $('<div>').addClass('value').append('R$: ').append($('<span>'))
-      )
-      .append(
-        $('<div>').addClass('remove').append($('<a href="javascript:void()">').append(I18n.remove))
-      )
+    )
+    .append(
+      $('<div>').addClass('value').append('R$: ').append($('<span>'))
+    )
+    .append(
+      $('<div>').addClass('remove').append($('<a href="javascript:void()">').append(I18n.remove))
     )
 
   remove:(that) ->

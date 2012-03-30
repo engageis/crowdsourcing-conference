@@ -5,7 +5,7 @@ en:
   simple_form:
     labels:
       subscriptions:
-        email: "E-mail"
+        email: "Email"
 
   subscription:
       subscription: "Subscription"
@@ -21,6 +21,7 @@ en:
         message: "Subscription CCS12"
   editions: "Editions"
   contact: "Contact"
+  schedule: "Schedule"
   info:
     location: "Location"
     share: "Share"
@@ -38,13 +39,25 @@ en:
     contact:
       text: "Your company is interested in sponsoring an international event for Open Innovation and Crowdsourcing?"
 
+  action_mailer:
+    subscriptions:
+      new:
+        subject: "Subscription [Crowdsourcing Conference 2012]"
+        title: "You made your registration on the"
+        message: "When we receive payment confirmation, you will receive a notification by email."
+      paid:
+        subject: "Payment received [Crowdsourcing Conference 2012]"
+        title: "Your registration is confirmed in the"
+        message: "Your payment for CCS12 was compensated successfully."
+      thanks: "Sincerely team CCS12."
+
   simple_form:
     labels:
       subscriptions:
         phone: "Business Phone"
         phone_cell: "Cell"
         kind: "Choose the days you want to register"
-        email: "E-mail"
+        email: "Email"
 
   number:
     format:

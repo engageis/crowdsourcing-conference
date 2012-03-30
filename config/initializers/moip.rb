@@ -1,5 +1,5 @@
 MoIP.setup do |config|
-  config.uri = 'https://desenvolvedor.moip.com.br/sandbox'
-  config.token = 'XYLLM7WLYFYOQF753GQ9YFMDCOFVZXZK'
-  config.key = 'ZUWPPTJZCSHQFO70PJUJY2OTHAN9XXTA6OUWKACB'
+  config.uri = ENV["MOIP_CONFIG_URI"]
+  config.token = ENV["MOIP_CONFIG_TOKEN"]
+  config.key = ENV["MOIP_CONFIG_KEY"]
 end

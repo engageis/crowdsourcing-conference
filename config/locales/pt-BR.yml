@@ -1,7 +1,6 @@
 # Encoding: UTF-8
 pt-BR:
-  event: O evento
-  schedule: Programação
+  event: "O evento"
   subscription:
     subscription: "Inscreva-se"
     first_day: "Primeiro dia"
@@ -16,6 +15,7 @@ pt-BR:
       message: "Inscrição no CCS12"
   editions: "Edições"
   contact: "Contato"
+  schedule: "Programação"
   info:
     location: "Localização"
     share: "Compartilhe"
@@ -28,7 +28,19 @@ pt-BR:
     title: "Obrigado por fazer parte deste evento"
     text: "Você receberá uma confirmação do pagamento por e-mail."
     back_to_home: "Voltar para a página inicial"
-  
+
+  action_mailer:
+    subscriptions:
+      new:
+        subject: "Inscrição [Crowdsourcing Conference 2012]"
+        title: "Você realizou sua inscrição no"
+        message: "Quando recebemos a confirmação do pagamento, você ira receber uma notificação por e-mail."
+      paid:
+        subject: "Pagamento recebido [Crowdsourcing Conference 2012]"
+        title: "Sua inscrição está confirmada na"
+        message: "Seu pagamento referente a inscrição no CCS12 foi compensada hoje com sucesso."
+      thanks: "Atenciosamente equipe do CCS12."
+
   descriptions:
     contact:
       text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"

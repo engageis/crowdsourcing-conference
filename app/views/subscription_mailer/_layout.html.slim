@@ -1,0 +1,27 @@
+css:
+  a, a:link, a:visited { text-decoration: none; color: #666 }
+  a:hover {text-decoration: underline; color: #666} 
+  .button:hover {background: #F85516; text-decoration: none !important; } 
+
+html
+  head
+  body[style="font: .8em 'Helvetica', Tahoma, Arial, sans-serif;"]
+    table[style="color: #222;	background: #F9F9F9;	width:647px; border:5px solid #DDD;"]
+      thead
+        tr
+          th[style="text-align: left; padding:1em 1em .5em; 	border-bottom:1px dotted #CCC;" colspan="3"]
+            h1 CCS12
+          th[style="text-align: right; padding:1em 1em .5em; 	border-bottom:1px dotted #CCC;"] = l Date.today, format: :long
+      tbody
+        tr
+          td[colspan="4" style="padding: 10px;"]
+            = yield :mailer
+            div[style="text-align: right"] = t'action_mailer.subscriptions.thanks'
+      tfoot[style="border-top: 1px solid #CCC; margin-top: 20px"]
+        tr
+          th[style="padding: 20px 0 10px 0; text-align: left;"]
+          th[style="padding: 20px 0 10px 0;" colspan="3"]
+            ul[style="margin: 0; padding: 0 10px; list-style: none; float: right; font-size: 10px"]
+              li[style="margin: 0; padding: 0 10px; list-style: none; float: right; font-size: 10px"]
+                a[href="http://www.conferenciacrowdsourcing.com.br/" style="text-decoration: none; color: #666"] Crowdsourcing Conference
+                

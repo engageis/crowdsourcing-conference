@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def index_page
-    @the_event = auto_html(Event.first.text){ html_escape; simple_format }
+    @the_event = auto_html(Event.first.text){ html_escape; simple_format } rescue nil
   end
 end

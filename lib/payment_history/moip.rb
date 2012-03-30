@@ -16,6 +16,7 @@ module PaymentHistory
             for subscription in @payment.subscriptions
               subscription.paid! unless subscription.paid
             end
+            SubscriptionMailer.paid(@payment).deliver
           end
         else
           @response_code = ResponseCode::NOT_PROCESSED

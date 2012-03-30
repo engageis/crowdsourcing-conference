@@ -1,6 +1,8 @@
 #Encoding: UTF-8
 class SubscriptionsController < ApplicationController
   def checkout
+    puts ENV["MOIP_CONFIG_URI"].inspect
+    
     @payment = Payment.new params[:payment]
 
     total = 0
@@ -17,6 +19,7 @@ class SubscriptionsController < ApplicationController
 
     @payment.total = total
     if @payment.save
+      SubscriptionMailer.new_subscription(@payment).deliver
       begin
         payer = {
            :nome => @payment.payer_name,

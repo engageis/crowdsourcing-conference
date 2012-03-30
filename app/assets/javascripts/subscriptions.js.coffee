@@ -2,20 +2,25 @@ Subscriptions = Backbone.View.extend({
   VALUES: {'subscription.first_day': 300, 'subscription.second_day': 300, 'subscription.two_days': 500}
 
   events:
-    "click a.subscription.add": "add"
+    "click a.add": "add"
     "change .subscriptions .subscription .subscription_kind": "update_values"
     "change .subscriptions .subscription .subscription_name": "add_summary"
     "click .summaries .summary .remove a": "remove"
 
   add: ->
     size = $('.subscriptions .subscription').size()
+    if size %2 == 0
+      even = ''
+    else
+      even = 'even' #I know
+
     subscription_class = 'subscription_'+(size+1)
     $('.subscriptions')
     .append(
       $('.subscriptions .subscription:first')
       .clone()
       .removeClass('subscription_1')
-      .addClass(subscription_class)
+      .addClass(even + ' ' + subscription_class)
     )
     this.clear_subscription(subscription_class)
     this.delegate_masks()
@@ -52,6 +57,11 @@ Subscriptions = Backbone.View.extend({
         $('<div>').addClass('name').append(name)
       )
       .append(
+        $('<div>').addClass('description').append(
+          $('option[value="'+$('.subscriptions .subscription.'+subscription+' .subscription_kind').val()+'"]').html()
+        )
+      )
+      .append(
         $('<div>').addClass('value').append('R$: ').append($('<span>'))
       )
       .append(
@@ -81,6 +91,7 @@ Subscriptions = Backbone.View.extend({
     i = 0
     $('.subscriptions .subscription').each ->
       i += 1
+      $(this).addClass('even') if i %2 == 0
       $(this).addClass('subscription_'+i)
     this.delegate_masks()
 

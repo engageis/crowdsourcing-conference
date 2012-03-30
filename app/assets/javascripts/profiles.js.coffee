@@ -6,10 +6,16 @@ Profiles = Backbone.View.extend({
   speakers_tab: ->
     $('.schedule .profiles #speakers').fadeIn('slow');
     $('.schedule .profiles #workshops').hide()
+    this.toggle()
 
   workshops_tab: ->
     $('.schedule .profiles #workshops').fadeIn('slow');
     $('.schedule .profiles #speakers').hide()
+    this.toggle()
+
+  toggle: ->
+    $('.schedule .profiles a.talks_tab').toggleClass('selected')
+    $('.schedule .profiles a.workshops_tab').toggleClass('selected')
 
 })
 

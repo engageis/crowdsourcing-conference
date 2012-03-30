@@ -1,14 +1,14 @@
 = f.simple_fields_for :subscriptions do |s|
   .subscription
-    = s.input :name, input_html: {class: "subscription_name"}
-    = s.input :birthday, input_html: {class: "birthday"}, as: :string
-    = s.input :sex, as: :radio_buttons, collection: [:M, :F]
-    = s.input :city
-    = s.input :state
-    = s.input :company
-    = s.input :role
-    = s.input :email
-    = s.input :phone, input_html: {class: "phone"}
-    = s.input :phone_cell, input_html: {class: "phone"}
-    = s.input :kind, input_html: {class: "subscription_kind"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten]
+    = s.input :name, input_html: {class: "subscription_name"}, wrapper_html: {class: "clear"}
+    = s.input :birthday, input_html: {class: "birthday"}, as: :string, wrapper_html: {class: "float_inputs clear"}
+    = s.input :sex, as: :radio_buttons, collection: [:M, :F], wrapper_html: {class: "float_inputs sex"}
+    = s.input :city, wrapper_html: {class: "float_inputs clear"}
+    = s.input :state, wrapper_html: {class: "float_inputs"}
+    = s.input :company, wrapper_html: {class: "float_inputs clear"}
+    = s.input :role,  wrapper_html: {class: "float_inputs"}
+    = s.input :email, wrapper_html: {class: "clear"}
+    = s.input :phone, input_html: {class: "phone"}, wrapper_html: {class: "float_inputs clear"}
+    = s.input :phone_cell, input_html: {class: "phone"}, wrapper_html: {class: "float_inputs"}
+    = s.input :kind, input_html: {class: "subscription_kind"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten], wrapper_html: {class: "kind"}
     

@@ -6,11 +6,16 @@ Schedules = Backbone.View.extend({
   first_tab: ->
     $('.schedule .days #first_day').fadeIn('slow');
     $('.schedule .days #second_day').hide()
+    this.toggle()
 
   second_tab: ->
     $('.schedule .days #second_day').fadeIn('slow');
     $('.schedule .days #first_day').hide()
+    this.toggle()
 
+  toggle: ->
+    $('.schedule .days a.first_tab').toggleClass('selected')
+    $('.schedule .days a.second_tab').toggleClass('selected')
 })
 
 jQuery ->

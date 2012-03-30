@@ -11,9 +11,10 @@ a#schedule name="schedule"
 
   = render 'home/infos'
 
-  .subscription
-    a#subscription name="subscription"
-    h1 = t'subscription.subscription'
+.clear
+hr.sub
+.wrapper
+  .subscriptions_wrapper
     = render "subscriptions/new"
 
   //.editions

@@ -1,7 +1,8 @@
-en:
+#Encoding: UTF-8
+pt-BR:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": 'Sim'
+    "no": 'Não'
     required:
       text: 'required'
       mark: ''
@@ -9,7 +10,7 @@ en:
       # When using html, text and mark won't be used.
       html: ''
     error_notification:
-      default_message: "Some errors were found, please take a look:"
+      default_message: "Alguns erros foram encontrados, por favor dê uma olhada:"
     # Labels and hints examples
     # labels:
     #   password: 'Password'

@@ -93,6 +93,131 @@ hr
   border-bottom: 0.05em solid #ccc
   margin-top: 10px
 
+.clear
+  clear: both
+hr.sub
+  margin-top: 50px
+
+a.go_top
+  float: right
+  background: image-url('go_top.png')
+  display: inline-block
+  width: 30px
+  height: 30px
+  padding: 0px !important
+
+.subscriptions_wrapper
+  h1
+    margin-bottom: 20px
+    float: left
+  a.go_top
+    margin-top: 45px
+  div.subscription
+    float: left
+    background: #fff
+    border: 1px solid #CCC
+    padding: 20px 10px
+    width: 450px
+    margin: 7px 0px
+  div.subscription.even
+    margin-left: 16px
+  a.add
+    padding: 3px 0 3px 25px
+    background: image-url('add.png') left center no-repeat
+    font-size: 1.8em
+    color: black
+    float: right
+  h2
+    font-size: 2em
+    margin: 2em 0 1.3em 0
+  form
+    .clear
+      clear: both
+      margin-bottom: 15px
+    .float_inputs
+      float: left
+      width: 225px
+      input
+        width: 202px
+    label
+      display: block
+      font-size: 18px
+      margin-bottom: 7px
+    input
+      width: 428px
+      border: 1px solid #666
+      padding: 3px
+      font-family: "din-medium", arial, sans-serif
+      font-size: 16px
+      &:focus
+        background: #E0E2E0
+      &.btn
+        width: auto
+    .sex
+      input
+        width: auto
+      label
+        display: inline-block
+      label.control-label
+        display: block
+    select
+      width: 435px
+      border: 1px solid #666
+      padding: 3px
+      font-family: "din-medium", arial, sans-serif
+      font-size: 16px
+    .kind
+      clear: both
+      label
+        font-family: "Lora", serif
+
+  .summaries
+    .summary
+      background: #fff
+      border: 1px solid #CCC
+      padding: 27px 20px
+      margin-bottom: 5px
+      height: 17px
+      div
+        float: left
+      .name
+        font-size: 1.7em
+        width: 505px
+        display: block
+        min-height: 10px
+      .description
+        font-size: 1.7em
+        margin-right: 80px
+      .value
+        font-size: 1.7em
+      .remove
+        float: right
+        a
+          padding: 3px 0 3px 25px
+          background: image-url('remove.png') left center no-repeat
+          font-size: 1.8em
+          color: black
+  .subtotal
+    color: black
+    font-family: din-medium, helvetica, arial, sans-serif
+    font-size: 2.5em
+    padding: 25px 0
+    float: right
+    clear: both
+  .btn
+    float: right
+    clear: both
+    background: black
+    border: none
+    color: white
+    font-family: din-medium, helvetica, arial, sans-serif
+    font-size: 2em
+    padding: 15px
+    text-transform: uppercase
+    +box-shadow(#666 4px 4px 7px)
+    +border-radius(3px)
+    
+
 .banner
   height: 740px 
   .ccs12
@@ -119,17 +244,21 @@ hr
 
   hr
     clear: both
+    margin-top: 50px
+    margin-bottom: 40px
   .days, .profiles
-    float: left
     
+    #first_day
+      clear: both
     #second_day
+      clear: both
       display: none
 
     h1
       margin-bottom: 40px
     
     .first_tab
-      margin-right: 15px  
+      margin-right: 15px
     
     a
       padding: 0.8em 1em
@@ -141,14 +270,16 @@ hr
       &:hover
         background-color: black
         color: white
-      &:active, .selected
+      &:active, &.selected
         background-color: $yellow
         color: black
       &:first-child
         margin-right: 5px
     
     table
+      width: 100%
       margin-top: 30px
+      clear: both
       tr
         td
           padding: 10px 10px
@@ -156,8 +287,8 @@ hr
           font-size: 1.6em
         td.time
           margin-right: 50px
+          width: 50px
         td.event
-          width: 80%
           line-height: 130%
       tr.odd
         background-color: white
@@ -178,8 +309,11 @@ hr
         font-style: italic
         font-size: 1.4em
         line-height: 130%
+  #speakers
+    clear: both
   #workshops
     display: none
+    clear: both
 
 
 .info

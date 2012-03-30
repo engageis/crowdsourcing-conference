@@ -1,8 +1,9 @@
 .days
   h1 = t'schedule'
 
-  a.first_tab = t'subscription.first_day'
+  a.first_tab.selected = t'subscription.first_day'
   a.second_tab = t'subscription.second_day'
+  a.go_top.anchorLink[href="#home"]
 
   #first_day
     = render 'schedules/list', schedules: Schedule.first_day

@@ -1,3 +1,7 @@
+a#subscription name="subscription"
+a.go_top.anchorLink[href="#home"]
+h1 = t'subscription.subscription'
+.clear
 - if flash[:failure]
   .moip_error
     p = flash[:failure]
@@ -6,22 +10,24 @@
   = f.input :total, as: :hidden, input_html: {value: 0, class: "total"}
   .subscriptions
     = render "subscriptions/form", f: f
-
-  a.add.subscription[href="javascript:void(0)"] = t'subscription.add'
+  .clear
+  a.add[href="javascript:void(0)"] = t'subscription.add'
   h2 = t'subscription.summary'
   .summaries
     - i = 0
     - for subscription in @payment.subscriptions
       - i += 1
+      - if subscription.kind.nil?
+        - kind = Subscription::KINDS.first
+      - else
+        - kind = subscription.kind
       .summary[class="subscription_#{i}"]
         .name = subscription.name
+        .description = t(kind)
         .value
           | R$: 
           span
-            - if subscription.kind.nil?
-              = Subscription::VALUES[Subscription::KINDS.first]
-            - else
-              = Subscription::VALUES[subscription.kind]
+              = Subscription::VALUES[kind]
         .remove
           a href="javascript:void()" = t'subscription.remove'
   .subtotal 

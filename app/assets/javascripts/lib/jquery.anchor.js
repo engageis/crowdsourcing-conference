@@ -9,31 +9,56 @@
 	You can use and modify this script for any project you want, but please leave this comment as credit.
 	
 *****/
-		
 
-
-$(document).ready(function() {
-	$("a.anchorLink").anchorAnimate()
+$(function () {
+  $('.anchorLink').anchorAnimate({ topOffset: -100 });
 });
 
 jQuery.fn.anchorAnimate = function(settings) {
+ 	settings = jQuery.extend({ speed: 500, topOffset: 0 }, settings);	
+    this.click(function (e) {
+        var locationHref, elementClick, destination;
 
- 	settings = jQuery.extend({
-		speed : 300
-	}, settings);	
-	
-	return this.each(function(){
-		var caller = this
-		$(caller).click(function (event) {	
-			event.preventDefault()
-			var locationHref = window.location.href
-			var elementClick = $(caller).attr("href")
-			
-			var destination = $(elementClick).offset().top;
-			$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination}, settings.speed, function() {
-				window.location.hash = elementClick
-			});
-		  	return false;
-		})
-	})
-}
+        //if (navigator.appName === 'Microsoft Internet Explorer') {
+            //settings.topOffset = 0;
+        //} else {
+            //e.preventDefault();
+            //e.stopPropagation();
+        //}
+
+        //locationHref = window.location.href;
+        elementClick = $(this).attr("href");
+        destination = $(elementClick).offset().top + settings.topOffset;
+
+        // O callback depois da animação servia para adicionar o hash ao endereço,
+        // isso fazia o pulo acontecer, coisa que eu não gostei.
+        $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, settings.speed);
+
+        return false;
+    });
+    return this;
+};
+
+//plugin scroll to top
+jQuery.fn.topLink = function(settings) {
+	settings = jQuery.extend({
+		min: 1,
+		fadeSpeed: 200
+	}, settings);
+	return this.each(function() {
+		//listen for scroll
+		var el = $(this);
+		el.hide(); //in case the user forgot
+		$(window).scroll(function() {
+			if($(window).scrollTop() >= settings.min)
+			{
+				el.fadeIn(settings.fadeSpeed);
+			}
+			else
+			{
+				el.fadeOut(settings.fadeSpeed);
+			}
+		});
+	});
+};
+

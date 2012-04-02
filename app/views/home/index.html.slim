@@ -1,9 +1,8 @@
-.wrapper
+.wrapper#home
   = render 'home/ccs12'
 hr
 
-a#schedule name="schedule"
-.wrapper
+.wrapper#schedule
   .schedule
     = render 'schedules/index'
     hr
@@ -17,10 +16,9 @@ hr.sub
   .subscriptions_wrapper
     = render "subscriptions/new"
 
-  //.editions
+//.editions
 .contact
-  .wrapper
-    a#contact name="contact"
+  .wrapper#contact
     h1 = t'contact'
     .what
       p = t'descriptions.contact.text'

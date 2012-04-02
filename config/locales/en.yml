@@ -34,7 +34,9 @@ en:
   thank_you:
     title: "Thanks for being part of this event"
     text: "You will receive a payment confirmation by email."
-    
+  supporters: "Supporters"
+  commercialization: "Commercialization"
+  organization: "Organization"
 
   descriptions:
     contact:

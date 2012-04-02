@@ -29,7 +29,11 @@ pt-BR:
     title: "Obrigado por fazer parte deste evento"
     text: "Você receberá uma confirmação do pagamento por e-mail."
     back_to_home: "Voltar para a página inicial"
-
+  supporters: "Apoiadores"
+  commercialization: "Comercialização"
+  organization: "Organização"
+  
+  
   action_mailer:
     subscriptions:
       new:

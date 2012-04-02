@@ -105,11 +105,14 @@ hr.sub
 
 a.go_top
   float: right
-  background: image-url('go_top.png')
+  background: image-url('go_top.png') top no-repeat
+  background-color: transparent !important
   display: inline-block
   width: 30px
-  height: 30px
+  height: 31px
   padding: 0px !important
+  &:hover
+    background-position: 0 -31px
 
 .subscriptions_wrapper
   h1
@@ -226,7 +229,11 @@ a.go_top
     text-transform: uppercase
     +box-shadow(#666 4px 4px 7px)
     +border-radius(3px)
-    
+    &:hover
+      background: $yellow
+      color: black
+      cursor: pointer
+      +box-shadow(#999 -3px -3px 7px)
 
 .banner
   height: 740px 
@@ -371,7 +378,6 @@ a.go_top
   background-color: black
   border-top: 1px solid grey
   height: 20em
-  margin-top: 2em
   h1
     color: white
     width: 30%
@@ -390,7 +396,7 @@ a.go_top
       width: 30%
       line-height: 130%
       float: left
-      
+
     em.email
       font-family: "din-medium", helvetica, arial, sans-serif
       font-size: 3em
@@ -404,3 +410,29 @@ a.go_top
     font-size: 1.5em
     margin-bottom: 2em
     line-height: 1.3em
+
+.supporters
+  margin-top: 100px
+  background: white
+  border-top: 1px solid #ccc
+
+  .wrapper
+    padding: 10px 0
+
+    h1
+      margin: auto
+      font-size:  17px
+      margin-bottom: 20px
+    table
+      width: 100%
+      tr
+        td
+          text-align: center
+          padding-bottom: 30px
+    .commercialization
+      float: left
+      width: 200px
+    .organization
+      float: right
+      width: 200px
+      text-align:  right

@@ -51,13 +51,14 @@ header
   a.logo
     display: block
     width: 240px
-    height: 80px
+    height: 83px
     margin-top: 1em
     float: left
     background: image-url("logo.png") no-repeat
-
     h1
       visibility: hidden
+  a.logo.pt-BR
+    background: image-url("logo_pt-BR.png") no-repeat
 
   .nav
     float: right
@@ -233,23 +234,30 @@ a.go_top
       background: $yellow
       color: black
       cursor: pointer
-      +box-shadow(#999 -3px -3px 7px)
+      //+box-shadow(none)
+    &:active
+      margin-top: 3px
 
 .banner
-  height: 740px 
   .ccs12
     width: 52%
     float: left
     .ccs_logo
-      margin: 5em 0 7em 0
+      margin: 5em 0 0 0
 
-    p.about, p
-      font-family: 'Lora', serif
-      font-weight: 400
-      font-style: italic
-      font-size: 1.5em
-      margin-bottom: 2em
-      line-height: 1.3em
+    h1
+      text-transform: none
+      margin: 15px 0 0 0
+
+    .text
+      margin-top: 6em
+      p
+        font-family: 'Lora', serif
+        font-weight: 400
+        font-style: italic
+        font-size: 1.5em
+        margin-bottom: 2em
+        line-height: 1.3em
 
   .map
     float: right
@@ -343,23 +351,34 @@ a.go_top
   .local
     iframe
       margin-left: 1.2em
+    p.address
+      margin-left: 1.2em
+      font-family: 'Lora', serif
+      font-weight: 400
+      font-style: italic
+      font-size: 1.3em
+      margin-bottom: 1em
+      line-height: 1.3em
 
   .support, .presentation, .sponsors
     text-align: center
     h2
       text-align: left
-  .support, .midia
-    table
-      width: 260px
-      margin: auto
-      tr
-        td
-          text-align: center
-          padding-bottom: 10px
   .midia
     text-align: center
+    img
+      display: block
+      margin: auto
+      margin-bottom: 30px
     h2
       text-align: left
+  .sponsors
+    h3
+      text-align: left
+      margin-left: 30px
+      font-size: 12px
+      color: #999
+      margin-bottom: 5px
   .social
     .facebook_icon
       margin-left: 1.8em
@@ -374,16 +393,16 @@ a.go_top
   float: left
   width: 100%
 
-.contact
+.footer
   background-color: black
   border-top: 1px solid grey
-  height: 20em
+  //height: 20em
   h1
+    font-size: 20px
     color: white
-    width: 30%
     margin: 0
     margin-top: 1em
-    margin-bottom: 0.8em
+    margin-bottom: 2em
 
   .what
     p
@@ -393,15 +412,22 @@ a.go_top
       font-weight: 400
       font-style: italic
       font-size: 1.7em
-      width: 30%
+      width: 300px
       line-height: 130%
-      float: left
+      margin-bottom: 60px
 
     em.email
       font-family: "din-medium", helvetica, arial, sans-serif
-      font-size: 3em
+      font-size: 2.5em
       color: white
-      float: right
+  .contact
+    float: left
+    width: 580px
+    padding-bottom: 60px
+  .press
+    float: right
+    width: 380px
+
 .thank_you, .moip_error
   p
     font-family: 'Lora', serif
@@ -415,10 +441,8 @@ a.go_top
   margin-top: 100px
   background: white
   border-top: 1px solid #ccc
-
   .wrapper
     padding: 10px 0
-
     h1
       margin: auto
       font-size:  17px

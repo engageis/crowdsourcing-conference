@@ -15,12 +15,15 @@ pt-BR:
       message: "Inscrição no CCS12"
   editions: "Edições"
   contact: "Contato"
+  press: "Assessoria de imprensa"
   schedule: "Programação"
   info:
     location: "Localização"
     share: "Compartilhe"
     media: "Parceiros na mídia"
-    support: "Apoio"
+    diamond: "Diamante"
+    silver: "Prata"
+    bronze: "Bronze"
     sponsors: "Patrocínio"
     presentation: "Apresentação"
   speakers: "Palestrantes"
@@ -48,6 +51,8 @@ pt-BR:
 
   descriptions:
     contact:
+      text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
+    press:
       text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
   
   simple_form:

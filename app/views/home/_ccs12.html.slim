@@ -1,8 +1,34 @@
-.banner
+.home
   .ccs12
-    =image_tag("ccs12.png", :class => 'ccs_logo') 
+    = image_tag("ccs12.png", :class => 'ccs_logo') 
     h1 2 e 3 de Julho na Fecomércio - SP
     .text = @the_event
   .map
-    =image_tag("map.png", :class => 'main_map')
+    = image_tag("map.png", :class => 'main_map')
+  .clear
+  .infos_top
+    .realization
+      h2 = t'info.realization'
+      hr
+      = image_tag("mutopo.png", :class => 'mutopo_logo')
+    .sponsors
+      h2 = t'info.sponsors'
+      hr
+      table
+        thead
+          tr
+            th
+              h3 = t'info.diamond'
+            th
+              h3 = t'info.silver'
+            th
+              h3 = t'info.bronze'
+        tbody
+          tr
+            td
+              = image_tag('infos/sponsors_fecomercio_sp.png', :class => "support_logos")
+            td
+              = image_tag('infos/tecnisa.png', :class => "support_logos")
+            td
+              = link_to image_tag('infos/engage.png'), 'http://engage.is'
   .clear

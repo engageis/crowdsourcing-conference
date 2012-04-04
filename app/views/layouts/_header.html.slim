@@ -8,8 +8,18 @@ header
         span
         = link_to "PT", root_path(locale: "pt-BR")
       ul
-        li = link_to t(:home), "#home", class: "anchorLink"
-        li = link_to t(:schedule), "#schedule", class: "anchorLink"
+        li = link_to "Home", "#home", class: "anchorLink"
+        li
+          span = t(:the_conference)
+          ul
+            li = link_to t(:schedule), "#schedule", class: "anchorLink"
+            li = link_to t("speakers"), "#profiles", class: "anchorLink speakers"
+            li = link_to t("workshops"), "#profiles", class: "anchorLink workshops"
         li = link_to t("subscription.subscription"), "#subscription", class: "anchorLink"
-        /li = link_to t(:editions), "#editions"
+        li = link_to t("info.location"), "#location", class: "anchorLink"
+        li
+          span = t(:editions)
+          ul
+            li = link_to '2011', 'http://2011.conferenciacrowdsourcing.com.br'
+            /li = link_to '2012', '#edition-2012', class: "anchorLink"
         li = link_to t(:contact), "#contact", class: "anchorLink"

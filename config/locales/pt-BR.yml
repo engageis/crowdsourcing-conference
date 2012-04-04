@@ -17,6 +17,7 @@ pt-BR:
   contact: "Contato"
   press: "Assessoria de imprensa"
   schedule: "Programação"
+  the_conference: "A Conferência"
   info:
     location: "Localização"
     share: "Compartilhe"
@@ -26,6 +27,7 @@ pt-BR:
     bronze: "Bronze"
     sponsors: "Patrocínio"
     presentation: "Apresentação"
+    realization: "Realização"
   speakers: "Palestrantes"
   workshops: "Workshops"
   thank_you:

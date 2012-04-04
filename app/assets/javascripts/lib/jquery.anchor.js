@@ -16,7 +16,7 @@ $(function () {
 
 jQuery.fn.anchorAnimate = function(settings) {
  	settings = jQuery.extend({ speed: 500, topOffset: 0 }, settings);	
-    this.click(function (e) {
+    this.live('click', function (e) {
         var locationHref, elementClick, destination;
 
         //if (navigator.appName === 'Microsoft Internet Explorer') {

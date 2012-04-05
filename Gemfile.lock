@@ -57,6 +57,8 @@ GEM
     bourbon (1.4.0)
       sass (>= 3.1)
     builder (3.0.0)
+    childprocess (0.3.1)
+      ffi (~> 1.0.6)
     chunky_png (1.2.5)
     cocaine (0.2.1)
     coffee-rails (3.2.2)
@@ -92,6 +94,7 @@ GEM
       multi_json (~> 1.0)
     fastercsv (1.5.4)
     ffaker (1.13.0)
+    ffi (1.0.11)
     foreigner (1.1.5)
       activerecord (>= 3.0.0)
     formtastic (2.1.0)
@@ -103,12 +106,19 @@ GEM
       paper_trail (~> 2)
     has_scope (0.5.1)
     hike (1.2.1)
+    hpricot (0.8.6)
     httparty (0.6.1)
       crack (= 0.1.8)
     i18n (0.6.0)
     inherited_resources (1.3.1)
       has_scope (~> 0.5.0)
       responders (~> 0.6)
+    jasmine (1.1.2)
+      jasmine-core (>= 1.1.0)
+      rack (>= 1.1)
+      rspec (>= 1.3.1)
+      selenium-webdriver (>= 0.1.3)
+    jasmine-core (1.1.0)
     journey (1.0.3)
     jquery-rails (2.0.1)
       railties (>= 3.2.0, < 5.0)
@@ -192,11 +202,17 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
+    rubyzip (0.9.6.1)
     sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.20.0)
+      childprocess (>= 0.2.5)
+      ffi (~> 1.0)
+      multi_json (~> 1.0)
+      rubyzip
     shoulda-matchers (1.0.0)
     simple_form (2.0.1)
       actionpack (~> 3.0)
@@ -229,6 +245,8 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    video_info (0.2.11)
+      hpricot (~> 0.8.4)
     warden (1.1.1)
       rack (>= 1.0)
 
@@ -249,6 +267,7 @@ DEPENDENCIES
   foreigner
   globalize3
   inherited_resources
+  jasmine
   jquery-rails
   machinist
   moip!
@@ -266,3 +285,4 @@ DEPENDENCIES
   therubyracer
   thin
   uglifier (>= 1.0.3)
+  video_info

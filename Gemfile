@@ -21,6 +21,7 @@ gem "paperclip"
 gem 'enumerate_it'
 gem 'simple_form'
 gem 'auto_html'
+gem 'video_info'
 
 # Payment
 gem 'moip', :git => 'git://github.com/joaomilho/moip-ruby.git'
@@ -41,6 +42,7 @@ group :development, :test do
   gem "database_cleaner"
   gem "shoulda-matchers"
   gem "ffaker"
+  gem "jasmine"
 end
 
 group :production do

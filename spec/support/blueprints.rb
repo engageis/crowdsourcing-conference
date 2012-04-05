@@ -56,3 +56,7 @@ ProfileTranslation.blueprint do
 end
 
 
+
+Video.blueprint do
+  # Attributes here
+end

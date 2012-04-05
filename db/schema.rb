@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120320180325) do
+ActiveRecord::Schema.define(:version => 20120405165614) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -142,6 +142,18 @@ ActiveRecord::Schema.define(:version => 20120320180325) do
     t.boolean  "paid",       :default => false, :null => false
     t.datetime "paid_at"
     t.integer  "payment_id"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.string   "video_id"
+    t.string   "provider"
+    t.text     "description"
+    t.string   "thumbnail_small"
+    t.string   "thumbnail_large"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

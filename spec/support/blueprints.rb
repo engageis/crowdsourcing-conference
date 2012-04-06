@@ -58,5 +58,5 @@ end
 
 
 Video.blueprint do
-  # Attributes here
+  link {}
 end

@@ -13,10 +13,11 @@ module PaymentHistory
         puts '----1) update_from_service'
         puts "----2) #{@payment.moip_value} -------- #{@params[:valor].to_s}"
         puts "----3) #{@params[:status_pagamento].to_i} ---- #{TransactionStatus::AUTHORIZED}"
+        puts "----4) #{@params[:status_pagamento].to_i} ---- #{TransactionStatus::FINISHED}"
         
         if @payment.moip_value == @params[:valor].to_s
           @response_code = ResponseCode::SUCCESS
-          if @params[:status_pagamento].to_i == TransactionStatus::AUTHORIZED
+          if @params[:status_pagamento].to_i == TransactionStatus::AUTHORIZED || @params[:status_pagamento].to_i == TransactionStatus::FINISHED
             for subscription in @payment.subscriptions
               subscription.paid! unless subscription.paid
             end

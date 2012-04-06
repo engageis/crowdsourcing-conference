@@ -10,6 +10,10 @@ module PaymentHistory
       begin
         @payment = Payment.find_by_key @params[:id_transacao]
         @payment.update_from_service
+        puts '----1) update_from_service'
+        puts "----2) #{@payment.moip_value} -------- #{@params[:valor].to_s}"
+        puts "----3) #{@params[:status_pagamento].to_i} ---- #{TransactionStatus::AUTHORIZED}"
+        
         if @payment.moip_value == @params[:valor].to_s
           @response_code = ResponseCode::SUCCESS
           if @params[:status_pagamento].to_i == TransactionStatus::AUTHORIZED
@@ -24,6 +28,7 @@ module PaymentHistory
       rescue
         @response_code = ResponseCode::NOT_PROCESSED
       end
+      puts "---------- last here"
       self
     end
 

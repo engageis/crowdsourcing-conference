@@ -2,6 +2,7 @@ class Video < ActiveRecord::Base
   validates :link, presence: true
   after_create :fill_details
   validate :valid_link?, :on => :create
+  default_scope order(:title)
 
   private
   def valid_link?
@@ -17,7 +18,6 @@ class Video < ActiveRecord::Base
     self.description = video.description
     self.provider = video.provider
     self.thumbnail_small = video.thumbnail_small
-    puts video.thumbnail_small.inspect
     self.thumbnail_large = video.thumbnail_large
     save
   end

@@ -1,0 +1,66 @@
+$yellow: #FFCC33
+
++font-face("din-medium", font-files(asset_path("DIN-Medium.ttf", 'font')), asset_path("DIN-Medium.eot", 'font'))
++font-face("din-bold", font-files(asset_path("DIN-Bold.ttf", 'font')), asset_path("DIN-Bold.eot", 'font'))
++font-face("din-light", font-files("DIN-Light.ttf", "DIN-Light.eot"))
+
+body
+  background: image-url("bg/tile.png") 
+  font-size: 62.5%
+  font-family: "din-medium", arial, sans-serif
+  margin-top: 100px
+a
+  text-decoration: none
+p
+  font-family: din-medium, helvetica, arial, sans-serif
+
+h1, h2, h3, h4, h5, h6
+  color: black
+  text-transform: uppercase
+  font-family: din-medium, helvetica, arial, sans-serif
+h1
+  font-size: 3em
+  margin: 1.4em 0 1em 0
+h2
+  font-size: 1.7em
+  margin: 1em 0 1.3em 1em
+h3
+  font-size: 1.6em
+  margin: 1em 0 1.3em 0
+hr
+  border-bottom: 0.05em solid #ccc
+  margin-top: 10px
+
+.wrapper
+  width: 960px
+  margin: auto
+
+.clear
+  clear: both
+
+hr.sub
+  margin-top: 50px
+
+a.go_top
+  float: right
+  background: image-url('bg/go_top.png') top no-repeat
+  background-color: transparent !important
+  display: inline-block
+  width: 30px
+  height: 31px
+  padding: 0px !important
+  &:hover
+    background-position: 0 -31px
+
+.subscription, .contact
+  float: left
+  width: 100%
+
+.thank_you, .moip_error
+  p
+    font-family: 'Lora', serif
+    font-weight: 400
+    font-style: italic
+    font-size: 1.5em
+    margin-bottom: 2em
+    line-height: 1.3em

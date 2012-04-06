@@ -1,0 +1,54 @@
+.editions
+  width: 925px
+  margin: auto
+  #photos, #presentations
+    display: none
+  .box
+    margin: 30px 0 40px 0
+  .tabs
+    a
+      padding: 0.8em 1em
+      cursor: pointer
+      font-size: 1.5em
+      text-transform: uppercase
+      background-color: #ccc
+      margin-right: 15px
+      &:hover
+        background-color: black
+        color: white
+      &:active, &.selected
+        background-color: $yellow
+        color: black
+  #videos
+    .video_visualization
+      width: 925px
+      min-height: 525px
+      background: #ccc
+    ul
+      list-style: none
+      padding: 0
+      clear: both
+      li
+        float: left
+        width: 160px
+        padding: 30px 48px 0 47px
+        &:first-child
+          padding-left: 0
+        &:last-child
+          padding-right: 0
+        .img
+          width: 160px
+          height: 100px
+          overflow: hidden
+          a
+            margin: 0
+            padding: 0
+        a.title
+          color: black
+          display: block
+          font-family: 'Lora', serif
+          font-weight: 400
+          font-style: italic
+          font-size: 1.7em
+          line-height: 1.3em
+          cursor: pointer

@@ -58,5 +58,5 @@ end
 
 
 Video.blueprint do
-  link {}
+  link {"https://vimeo.com/28220980"}
 end

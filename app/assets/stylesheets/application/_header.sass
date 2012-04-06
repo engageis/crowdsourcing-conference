@@ -1,0 +1,82 @@
+header
+  height: 10em
+  background: black
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  width: 100%
+  z-index: 1001
+  a.logo
+    display: block
+    width: 240px
+    height: 83px
+    margin-top: 1em
+    float: left
+    background: image-url("logo.png") no-repeat
+    h1
+      visibility: hidden
+  a.logo.pt-BR
+    background: image-url("logo_pt-BR.png") no-repeat
+  .nav
+    float: right
+    .languages
+      text-align: right
+      margin-top: 2em
+      color: $yellow
+      font-size: 1.2em
+      a
+        +opacity(0.8)
+        color: $yellow
+        &:hover
+          +opacity(1)
+      span
+        padding: 10px
+        padding-top: 0
+        display: inline-block
+        background: image-url("bg/languages-point.png") center no-repeat
+    ul
+      margin-top: 35px
+      list-style: none
+      text-transform: uppercase
+      font-family: din-medium, helvetica, arial, sans-serif
+      font-size: 1.5em
+      li
+        float: left
+        margin-left: 20px
+        a, span
+          color: #999
+          padding: 5px
+          cursor: pointer
+          &:hover
+            color: white
+            background-color: #333
+        span
+          padding-right: 13px
+          background: image-url('bg/arrow_down.png') center right no-repeat
+        &:hover
+          ul
+            display: block
+          span
+            color: white
+            background-color: #333
+            background-image: image-url('bg/arrow_up.png')
+        ul
+          margin-top: 15px
+          width: 100%
+          display: none
+          padding-bottom: 10px
+          li
+            float: none
+            margin-left: 0
+            margin-bottom: 2px
+            a
+              color: white
+              background-color: #333
+              font-size: 15px
+              display: block
+              text-transform: none
+              text-align: center
+              &:hover
+                background-color: $yellow
+                color: black

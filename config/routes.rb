@@ -5,6 +5,8 @@ Ccs12::Application.routes.draw do
   match "/moip" => "payment_stream#moip", :as => :moip
   match "/thank_you" => "payment_stream#thank_you", :as => :thank_you
 
+  resources :videos, :only => [:show]
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 

@@ -1,0 +1,122 @@
+.subscriptions_wrapper
+  margin-bottom: 70px
+  h1
+    margin-bottom: 20px
+    float: left
+  a.go_top
+    margin-top: 45px
+  .box
+    background: #fff
+    border: 1px solid #CCC
+    padding: 20px 10px
+    margin: 7px 0px
+  div.subscription
+    float: left
+    width: 472px
+  div.subscription.even
+    margin-left: 16px
+  a.add
+    padding: 3px 0 3px 25px
+    background: image-url('bg/add.png') left center no-repeat
+    font-size: 1.8em
+    color: black
+    float: right
+  h2
+    font-size: 2em
+    margin: 2em 0 1.3em 0
+  form
+    .clear
+      clear: both
+      margin-bottom: 15px
+      padding: 0 7px
+    .float_inputs
+      float: left
+      width: 210px
+      padding: 0 7px
+      input
+        width: 202px
+    label
+      display: block
+      font-size: 18px
+      margin-bottom: 7px
+    input
+      width: 428px
+      border: 1px solid #666
+      padding: 3px
+      font-family: "din-medium", arial, sans-serif
+      font-size: 16px
+      &:focus
+        background: #E0E2E0
+      &.btn
+        width: auto
+    .sex
+      input
+        width: auto
+      label
+        display: inline-block
+      label.control-label
+        display: block
+    select
+      width: 435px
+      border: 1px solid #666
+      padding: 3px
+      font-family: "din-medium", arial, sans-serif
+      font-size: 16px
+    .kind
+      clear: both
+      padding: 0 7px
+      label
+        font-family: "Lora", serif
+
+  .summaries
+    .summary
+      background: #fff
+      border: 1px solid #CCC
+      padding: 27px 20px
+      margin-bottom: 5px
+      height: 17px
+      div
+        float: left
+      .name
+        font-size: 1.7em
+        width: 505px
+        display: block
+        min-height: 10px
+      .description
+        font-size: 1.7em
+        margin-right: 80px
+        width: 100px
+      .value
+        font-size: 1.7em
+      .remove
+        float: right
+        a
+          padding: 3px 0 3px 25px
+          background: image-url('bg/remove.png') left center no-repeat
+          font-size: 1.8em
+          color: black
+  .subtotal
+    color: black
+    font-family: din-medium, helvetica, arial, sans-serif
+    font-size: 2.5em
+    padding: 25px 0
+    float: right
+    clear: both
+  .btn
+    float: right
+    clear: both
+    background: black
+    border: none
+    color: white
+    font-family: din-medium, helvetica, arial, sans-serif
+    font-size: 2em
+    padding: 15px
+    text-transform: uppercase
+    +box-shadow(#666 4px 4px 7px)
+    +border-radius(3px)
+    &:hover
+      background: $yellow
+      color: black
+      cursor: pointer
+    &:active
+      margin-top: 3px

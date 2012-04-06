@@ -1,0 +1,67 @@
+.schedule
+  float: left
+  width: 70%
+  hr
+    clear: both
+    margin-top: 50px
+    margin-bottom: 40px
+  .days, .profiles
+    #first_day
+      clear: both
+    #second_day
+      clear: both
+      display: none
+    h1
+      margin-bottom: 40px
+    .first_tab
+      margin-right: 15px
+    a
+      padding: 0.8em 1em
+      cursor: pointer
+      font-size: 1.5em
+      text-transform: uppercase
+      background-color: #ccc
+      &:hover
+        background-color: black
+        color: white
+      &:active, &.selected
+        background-color: $yellow
+        color: black
+      &:first-child
+        margin-right: 5px
+    table
+      width: 100%
+      margin-top: 30px
+      clear: both
+      tr
+        td
+          padding: 10px 10px
+        td
+          font-size: 1.6em
+        td.time
+          margin-right: 50px
+          width: 50px
+        td.event
+          line-height: 130%
+      tr.odd
+        background-color: white
+  .box
+    width: 45%
+    float: left
+    margin: 30px 15px 40px 0
+    h4.name
+      font-family: "din-bold", helvetica, arial, sans-serif
+      font-size: 2em
+      margin: 15px 0 25px
+    .bio
+      p
+        font-family: "Lora", serif
+        font-weight: 400
+        font-style: italic
+        font-size: 1.4em
+        line-height: 130%
+  #speakers
+    clear: both
+  #workshops
+    display: none
+    clear: both

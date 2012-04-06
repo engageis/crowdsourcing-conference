@@ -10,7 +10,7 @@
     .realization
       h2 = t'info.realization'
       hr
-      = image_tag("mutopo.png", :class => 'mutopo_logo')
+      = link_to image_tag("mutopo.png", :class => 'mutopo_logo'), "http://www.mutopo.com.br/"
     .sponsors
       h2 = t'info.sponsors'
       hr
@@ -26,9 +26,9 @@
         tbody
           tr
             td
-              = image_tag('infos/sponsors_fecomercio_sp.png', :class => "support_logos")
+              = link_to image_tag('infos/sponsors_fecomercio_sp.png'), "http://www.fecomercio.com.br/"
             td
-              = image_tag('infos/tecnisa.png', :class => "support_logos")
+              = link_to image_tag('infos/tecnisa.png'), "http://www.tecnisa.com.br/"
             td
               = link_to image_tag('infos/engage.png'), 'http://engage.is'
   .clear

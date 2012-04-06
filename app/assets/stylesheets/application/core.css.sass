@@ -11,7 +11,7 @@ $yellow: #FFCC33
   margin: auto
 
 body
-  background: image-url("tile.png") 
+  background: image-url("bg/tile.png") 
   font-size: 62.5%
   font-family: "din-medium", arial, sans-serif
   margin-top: 100px
@@ -97,14 +97,14 @@ header
             background-color: #333
         span
           padding-right: 13px
-          background: image-url('arrow_down.png') center right no-repeat
+          background: image-url('bg/arrow_down.png') center right no-repeat
         &:hover
           ul
             display: block
           span
             color: white
             background-color: #333
-            background-image: image-url('arrow_up.png')
+            background-image: image-url('bg/arrow_up.png')
         ul
           margin-top: 15px
           width: 100%
@@ -136,7 +136,7 @@ hr.sub
 
 a.go_top
   float: right
-  background: image-url('go_top.png') top no-repeat
+  background: image-url('bg/go_top.png') top no-repeat
   background-color: transparent !important
   display: inline-block
   width: 30px
@@ -146,6 +146,7 @@ a.go_top
     background-position: 0 -31px
 
 .subscriptions_wrapper
+  margin-bottom: 70px
   h1
     margin-bottom: 20px
     float: left
@@ -163,7 +164,7 @@ a.go_top
     margin-left: 16px
   a.add
     padding: 3px 0 3px 25px
-    background: image-url('add.png') left center no-repeat
+    background: image-url('bg/add.png') left center no-repeat
     font-size: 1.8em
     color: black
     float: right
@@ -238,7 +239,7 @@ a.go_top
         float: right
         a
           padding: 3px 0 3px 25px
-          background: image-url('remove.png') left center no-repeat
+          background: image-url('bg/remove.png') left center no-repeat
           font-size: 1.8em
           color: black
   .subtotal
@@ -521,3 +522,52 @@ a.go_top
     .commercialization, .organization
       h1
         margin-bottom: 20px
+
+.editions
+  width: 925px
+  margin: auto
+  #photos, #presentations
+    display: none
+    text-align: center
+  .box
+    margin: 30px 0 40px 0
+  .tabs
+    a
+      padding: 0.8em 1em
+      cursor: pointer
+      font-size: 1.5em
+      text-transform: uppercase
+      background-color: #ccc
+      margin-right: 15px
+      &:hover
+        background-color: black
+        color: white
+      &:active, &.selected
+        background-color: $yellow
+        color: black
+  #videos
+    .video_visualization
+      width: 925px
+      min-height: 525px
+      background: #ccc
+    ul
+      list-style: none
+      padding: 0
+      clear: both
+      li
+        float: left
+        width: 160px
+        padding: 30px 48px 0 47px
+        &:first-child
+          padding-left: 0
+        &:last-child
+          padding-right: 0
+        a
+          display: block
+          font-family: 'Lora', serif
+          font-weight: 400
+          font-style: italic
+          font-size: 1.7em
+          line-height: 1.3em
+          padding-top:  15px
+          cursor: pointer

@@ -36,6 +36,9 @@ en:
     realization: "Realization"
   speakers: "Speakers"
   workshops: "Workshops"
+  videos: "Videos"
+  photos: "Photos"
+  presentations: "Presentations"
   thank_you:
     title: "Thanks for being part of this event"
     text: "You will receive a payment confirmation by email."

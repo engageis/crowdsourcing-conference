@@ -30,6 +30,9 @@ pt-BR:
     realization: "Realização"
   speakers: "Palestrantes"
   workshops: "Workshops"
+  videos: "Vídeos"
+  photos: "Fotos"
+  presentations: "Apresentações"
   thank_you:
     title: "Obrigado por fazer parte deste evento"
     text: "Você receberá uma confirmação do pagamento por e-mail."

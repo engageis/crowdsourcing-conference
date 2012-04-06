@@ -1,0 +1,13 @@
+hr
+.editions#edition-ccs12
+  a.go_top.anchorLink[href="#home"]
+  h1 CCS12
+
+  .tabs
+    a.videos.selected = t'videos'
+    a.photos = t'photos'
+    a.presentations = t'presentations'
+  .box
+    = render 'videos/index'
+    = render 'editions/photos'
+    = render 'editions/presentations'

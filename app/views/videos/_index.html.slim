@@ -1,0 +1,10 @@
+#videos
+  .video_visualization
+    | Video
+  - (1..8).to_a.in_groups_of(4) do |v|
+    ul
+      - for video in v.compact
+        li
+          = image_tag "TEMP.png"
+          a Carl Esposti crowdsourcing.org
+  .clear

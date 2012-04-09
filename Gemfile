@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'activeadmin'
 gem "paperclip"
+gem 'aws-s3'
 gem 'enumerate_it'
 gem 'simple_form'
 gem 'auto_html'

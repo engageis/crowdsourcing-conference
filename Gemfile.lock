@@ -52,6 +52,10 @@ GEM
     auto_html (1.5.1)
       redcarpet (~> 2.0.0)
       rinku (~> 1.5.0)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.1)
     bourbon (1.4.0)
@@ -247,6 +251,7 @@ GEM
       hpricot (~> 0.8.4)
     warden (1.1.1)
       rack (>= 1.0)
+    xml-simple (1.1.1)
 
 PLATFORMS
   ruby
@@ -254,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   auto_html
+  aws-s3
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   compass-rails

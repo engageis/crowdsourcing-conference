@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
   has_many :profile_translations
   has_attached_file :avatar, :styles => { default: "280x160>" }
   validates :name, :company, :kind, presence: true
-  validates_attachment_presence :avatar
+  validates_attachment_presence :avatar, S3_CONF
   accepts_nested_attributes_for :profile_translations, :allow_destroy => true
   after_initialize :build_translations
 

@@ -41,6 +41,8 @@ class SubscriptionsController < ApplicationController
          }
 
         response = MoIP::Client.checkout(payment_data)
+        #response["Status"] == "Sucesso"
+
         @payment.update_attribute :payment_token, response["Token"]
         session[:_payment_token] = response["Token"]
         redirect_to MoIP::Client.moip_page(response["Token"])

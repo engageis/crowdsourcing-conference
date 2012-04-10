@@ -2,8 +2,8 @@ apps:
   "ccs12": "ccs12"
 
 development: &defaults
-  GMAIL_SMTP_USER: josemarluedke@gmail.com
-  GMAIL_SMTP_PASSWORD: password
+  GMAIL_SMTP_USER: crowdsourcing.conference@gmail.com
+  GMAIL_SMTP_PASSWORD: 
   MOIP_CONFIG_URI: https://desenvolvedor.moip.com.br/sandbox
   MOIP_CONFIG_TOKEN: XYLLM7WLYFYOQF753GQ9YFMDCOFVZXZK
   MOIP_CONFIG_KEY: ZUWPPTJZCSHQFO70PJUJY2OTHAN9XXTA6OUWKACB

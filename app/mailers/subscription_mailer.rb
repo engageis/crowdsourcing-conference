@@ -1,5 +1,5 @@
 class SubscriptionMailer < ActionMailer::Base
-  default from: "ccs12@gmail.com"
+  default from: "Crowdsourcing Conference<crowdsourcing.conference@gmail.com>"
 
   def new_subscription(payment)
     send payment, t('action_mailer.subscriptions.new.subject')

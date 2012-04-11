@@ -17,8 +17,9 @@ gem 'routing-filter'
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'activeadmin'
-gem "paperclip"
-gem "aws-sdk"
+gem "paperclip", '~> 2.4.5'
+gem 'aws-s3'
+#gem "aws-sdk"
 gem 'enumerate_it'
 gem 'simple_form'
 gem 'auto_html'

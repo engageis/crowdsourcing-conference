@@ -24,6 +24,7 @@ gem 'enumerate_it'
 gem 'simple_form'
 gem 'auto_html'
 gem 'video_info'
+gem "formtastic", "~> 2.0.0"
 
 # Payment
 gem 'moip', :git => 'git://github.com/joaomilho/moip-ruby.git'

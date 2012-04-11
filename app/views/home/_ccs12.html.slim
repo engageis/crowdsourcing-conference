@@ -1,7 +1,7 @@
 .home
   .ccs12
     = image_tag("ccs12.png", :class => 'ccs_logo') 
-    h1 2 e 3 de Julho na Fecomércio - SP
+    h1 = t'location_and_date'
     .text = @the_event
   .map
     = image_tag("map.png", :class => 'main_map')
@@ -10,7 +10,7 @@
     .realization
       h2 = t'info.realization'
       hr
-      = link_to image_tag("mutopo.png", :class => 'mutopo_logo'), "http://www.mutopo.com.br/"
+      = link_to image_tag("mutopo.png", :class => 'mutopo_logo'), "http://www.mutopo.com.br/", target: "_blanck"
     .sponsors
       h2 = t'info.sponsors'
       hr
@@ -26,9 +26,9 @@
         tbody
           tr
             td
-              = link_to image_tag('infos/sponsors_fecomercio_sp.png'), "http://www.fecomercio.com.br/"
+              = link_to image_tag('infos/sponsors_fecomercio_sp.png'), "http://www.fecomercio.com.br/", target: "_blanck"
             td
-              = link_to image_tag('infos/tecnisa.png'), "http://www.tecnisa.com.br/"
+              = link_to image_tag('infos/tecnisa.png'), "http://www.tecnisa.com.br/", target: "_blanck"
             td
-              = link_to image_tag('infos/engage.png'), 'http://engage.is'
+              = link_to image_tag('infos/engage.png'), 'http://engage.is', target: "_blanck"
   .clear

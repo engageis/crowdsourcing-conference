@@ -4,14 +4,14 @@
     table
       tbody
         tr
-          td = link_to image_tag('infos/catarse.png'), 'http://catarse.me'
-          td = link_to image_tag('infos/ledface.jpg'), "http://ledface.com/"
-          td = link_to image_tag('infos/zebrabold.jpg'), "http://www.zebrabold.com.br/"
-          td = link_to image_tag('infos/my_jobspace.jpg'), "www.myjobspace.com.br"
+          td = link_to image_tag('infos/catarse.png'), 'http://catarse.me', target: "_blanck"
+          td = link_to image_tag('infos/ledface.jpg'), "http://ledface.com/", target: "_blanck"
+          td = link_to image_tag('infos/zebrabold.jpg'), "http://www.zebrabold.com.br/", target: "_blanck"
+          td = link_to image_tag('infos/my_jobspace.jpg'), "http://www.myjobspace.com.br", target: "_blanck"
           td = image_tag('infos/ruffles.jpg')
         tr
-          td = link_to image_tag('infos/moip.png'), "http://www.moip.com.br/"
-          td = link_to image_tag('infos/amorim.jpg'), "http://amorim.bz/"
+          td = link_to image_tag('infos/moip.png'), "http://www.moip.com.br/", target: "_blanck"
+          td = link_to image_tag('infos/amorim.jpg'), "http://amorim.bz/", target: "_blanck"
           td
           td
           td
@@ -22,5 +22,5 @@
 
     .organization
       h1 = t'organization'
-      = link_to image_tag('infos/atrevitta.jpg'), "http://atrevitta.com.br/"
+      = link_to image_tag('infos/atrevitta.jpg'), "http://atrevitta.com.br/", target: "_blanck"
     .clear

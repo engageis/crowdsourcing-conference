@@ -3,9 +3,9 @@ class Profile < ActiveRecord::Base
 
   translates :bio, :country
   has_many :profile_translations
-  has_attached_file :avatar, :styles => { default: "280x160>" }
+  has_attached_file :avatar, {:styles => { default: "280x160>" }}.merge(S3_CONF)
   validates :name, :company, :kind, presence: true
-  validates_attachment_presence :avatar, S3_CONF
+  validates_attachment_presence :avatar
   accepts_nested_attributes_for :profile_translations, :allow_destroy => true
   after_initialize :build_translations
 

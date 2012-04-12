@@ -40,5 +40,6 @@ p
     | Subtotal: R$ 
     span
       = @payment.subscriptions_total
+      |,00
   = f.button :submit, value: t("subscription.submit")
 .clear

@@ -44,6 +44,7 @@ Subscriptions = Backbone.View.extend({
       total = total + that.VALUES[this.value]
     $('form.new_payment .total').val(total)
     $('form.new_payment .subtotal span').html(total)
+    $('form.new_payment .subtotal span').append(",00") if total
 
   update_summary:(that) ->
     that = $(that.target)

@@ -2,6 +2,12 @@ a#subscription name="subscription"
 a.go_top.anchorLink[href="#home"]
 h1 = t'subscription.subscription'
 .clear
+p
+  ul
+    li #{t'prices.dates.until'} #{t'prices.dates.may'} R$ 500,00
+    li #{t'prices.dates.until'} #{t'prices.dates.june'} R$ 650,00
+    li #{t'prices.dates.until'} #{t'prices.dates.july'} R$ 740,00
+
 - if flash[:failure]
   .moip_error
     p = flash[:failure]
@@ -25,9 +31,9 @@ h1 = t'subscription.subscription'
         .name = subscription.name
         .description = t(kind)
         .value
-          | R$: 
+          | R$ 
           span
-              = Subscription::VALUES[kind]
+              = "#{Subscription::VALUES[kind]},00"
         .remove
           a href="javascript:void()" = t'subscription.remove'
   .subtotal 

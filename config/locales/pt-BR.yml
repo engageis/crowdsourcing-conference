@@ -41,8 +41,7 @@ pt-BR:
   supporters: "Apoiadores"
   commercialization: "Comercialização"
   organization: "Organização"
-  
-  
+
   action_mailer:
     subscriptions:
       new:
@@ -60,7 +59,13 @@ pt-BR:
       text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
     press:
       text: ""
-  
+  prices:
+    dates:
+      until: "Até"
+      may: "15 de maio"
+      june: "20 de junho"
+      july: "2 de julho"
+
   simple_form:
     labels:
       subscriptions:

@@ -38,7 +38,9 @@ Subscriptions = Backbone.View.extend({
     total = 0
     $('.subscriptions .subscription .subscription_kind').each ->
       subscription = that.get_subscription_class($(this))
-      $(".summaries .summary."+subscription+" .value span").html(that.VALUES[this.value])
+      value = that.VALUES[this.value]
+      value = "#{value},00" if that.VALUES[this.value]
+      $(".summaries .summary."+subscription+" .value span").html(value)
       total = total + that.VALUES[this.value]
     $('form.new_payment .total').val(total)
     $('form.new_payment .subtotal span').html(total)
@@ -61,7 +63,7 @@ Subscriptions = Backbone.View.extend({
       )
     )
     .append(
-      $('<div>').addClass('value').append('R$: ').append($('<span>'))
+      $('<div>').addClass('value').append('R$ ').append($('<span>'))
     )
     .append(
       $('<div>').addClass('remove').append($('<a href="javascript:void()">').append(I18n.remove))

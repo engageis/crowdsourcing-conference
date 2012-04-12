@@ -11,8 +11,8 @@ en:
       subscription: "Subscription"
       first_day: "First day"
       second_day: "Second day"
-      two_days: "The two days"
-      submit: "Make Payment"
+      two_days: "Both days"
+      submit: "Pay"
       summary: "Summary of purchase"
       add: "Make another subscription"
       remove: "Remove"
@@ -49,7 +49,7 @@ en:
 
   descriptions:
     contact:
-      text: "Your company is interested in sponsoring an international event for Open Innovation and Crowdsourcing?"
+      text: "Is your company interested in sponsoring an international event for Open Innovation and Crowdsourcing?"
     press:
       text: ""
   action_mailer:
@@ -63,6 +63,12 @@ en:
         title: "Your registration is confirmed in the"
         message: "Your payment for CCS12 was compensated successfully."
       thanks: "Sincerely team CCS12."
+  prices:
+    dates:
+      until: "Until"
+      may: "May 15"
+      june: "June 20"
+      july: "July 2"
 
   simple_form:
     labels:

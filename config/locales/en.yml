@@ -51,7 +51,7 @@ en:
     contact:
       text: "Your company is interested in sponsoring an international event for Open Innovation and Crowdsourcing?"
     press:
-      text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
+      text: ""
   action_mailer:
     subscriptions:
       new:

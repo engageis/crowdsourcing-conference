@@ -59,7 +59,7 @@ pt-BR:
     contact:
       text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
     press:
-      text: "Sua empresa está interessada em patrocinar um evento internacional de Inovação Aberta e Crowdsourcing?"
+      text: ""
   
   simple_form:
     labels:

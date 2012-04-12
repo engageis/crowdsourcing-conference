@@ -24,12 +24,12 @@ admin/ui-icons_2e83ff_256x240.png: admin/ui-icons_2e83ff_256x240-c15e521f58d397c
 admin/ui-icons_454545_256x240.png: admin/ui-icons_454545_256x240-05f848ec342542e941874c74a734e4a5.png
 admin/ui-icons_888888_256x240.png: admin/ui-icons_888888_256x240-86fd9258848f935f3dfb4bbfdf43bf63.png
 admin/ui-icons_cd0a0a_256x240.png: admin/ui-icons_cd0a0a_256x240-279edbd373e73b1ecd1ea7a6ba19750d.png
-bg/add.png: bg/add-fd907e85c239ab1d5dbd8a6f416a215d.png
+bg/add.png: bg/add-243ce8e14fe7a43fc94abc4f637b91d8.png
 bg/arrow_down.png: bg/arrow_down-7cb3bf79b300fc3bedc2b769457a2784.png
 bg/arrow_up.png: bg/arrow_up-cde8c44742651c0cad89243e4f60a31c.png
 bg/go_top.png: bg/go_top-7a4efa6bc407c11f048c2a026cd5eff3.png
 bg/languages-point.png: bg/languages-point-8f9ea68b67af77394ad03c4c7921a0ed.png
-bg/remove.png: bg/remove-da05619627208ed7369f969e1a823441.png
+bg/remove.png: bg/remove-f1cdb661ecabba78d6f85351a9d1bd7d.png
 bg/tile.png: bg/tile-20566f8fdc79080320d65c0db8c23cdb.png
 ccs12.png: ccs12-8dbc124872a25ab1d83e3935efde6e92.png
 facebook.png: facebook-c823b4dbb7e3f7ca1d94c15735e5b545.png
@@ -49,6 +49,7 @@ infos/my_jobspace.jpg: infos/my_jobspace-7e67920e7523d563d175b5008c9596e0.jpg
 infos/proxxima.jpg: infos/proxxima-615d34a20a9f91587e8c683e9da2d0f6.jpg
 infos/ruffles.jpg: infos/ruffles-80b9a4d3e8d15c61a53d37cd737a9c5f.jpg
 infos/sbgc.jpg: infos/sbgc-dd0f21eadbae997fb839aa45a860a748.jpg
+infos/sebrae.png: infos/sebrae-e9620d89cafb019cb7ecf22282b4931a.png
 infos/sponsors_fecomercio_sp.png: infos/sponsors_fecomercio_sp-a8dbee1912cc10a92d0e223dee79d2c0.png
 infos/tecnisa.png: infos/tecnisa-76c2ddd06522dbf0fc88fc46594fad75.png
 infos/tnw.jpg: infos/tnw-036237ec27d1dd7dcdee4cd1470a0812.jpg
@@ -62,7 +63,7 @@ twitter.png: twitter-e6c65383ce014ec5805f50931a9bd86c.png
 active_admin.js: active_admin-8f0710e1a43ba6cfd8e6002262aea1b4.js
 application.js: application-267685549228964f72118787527c75d8.js
 admin/active_admin.css: admin/active_admin-26d110d1a9cac11bb47f28c721dd4051.css
-application.css: application-f090de302215b11cbbe0ba76fd9c188a.css
+application.css: application-b214efe4499fb9d1f9432f60d83f6d9a.css
 glyphicons-halflings-white.png: glyphicons-halflings-white-4fbb6a0b9b4e61912f486ac494a858f1.png
 glyphicons-halflings.png: glyphicons-halflings-2ed0cba6eca0f44737ab78f1e58bc11e.png
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-6eb45caa96d965a96dd65eba4ba136df.png

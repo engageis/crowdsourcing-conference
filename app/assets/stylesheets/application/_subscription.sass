@@ -17,10 +17,13 @@
     margin-left: 16px
   a.add
     padding: 3px 0 3px 25px
-    background: image-url('bg/add.png') left center no-repeat
+    background: image-url('bg/add.png') left top no-repeat
     font-size: 1.8em
     color: black
     float: right
+    &:hover
+      color: $yellow
+      background-position: 0 -23px
   h2
     font-size: 2em
     margin: 2em 0 1.3em 0
@@ -91,12 +94,13 @@
       .remove
         float: right
         a
-          padding: 3px 0 3px 25px
-          background: image-url('bg/remove.png') left center no-repeat
+          padding: 0 0 0 25px
+          background: image-url('bg/remove.png') left top no-repeat
           font-size: 1.8em
           color: black
-          //&:hover
-            //color: $yellow
+          &:hover
+            color: $yellow
+            background-position: 0 -23px
   .subtotal
     color: black
     font-family: din-medium, helvetica, arial, sans-serif

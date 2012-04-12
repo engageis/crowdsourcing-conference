@@ -46,10 +46,10 @@ ActiveAdmin.register Subscription do
           row(:total_amount){ payment.display_total_amount }
           row(:service_tax_amount){ payment.display_service_tax }
           row(:payment_status){ payment.payment_status.titleize }
-          row :service_code
           row(:institution_of_payment){ payment.institution_of_payment.titleize }
           row :payment_date
         end
+        row :service_code
         row :key
         row :payment_token
       end

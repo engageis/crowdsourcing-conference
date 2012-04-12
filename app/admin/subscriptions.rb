@@ -49,8 +49,9 @@ ActiveAdmin.register Subscription do
           row :service_code
           row(:institution_of_payment){ payment.institution_of_payment.titleize }
           row :payment_date
-          row :key
         end
+        row :key
+        row :payment_token
       end
     end
   end

@@ -5,7 +5,13 @@ hr#profiles
   a.go_top.anchorLink[href="#home"]
 
   #speakers
-    = render Profile.speakers
+    - Profile.speakers.to_a.in_groups_of(2) do |s|
+      - for speaker in s
+        = render "profiles/profile", profile: speaker
+      .clear
 
   #workshops
-    = render Profile.workshops
+    - Profile.workshops.to_a.in_groups_of(2) do |w|
+      - for workshop in w
+        = render "profiles/profile", profile: workshop
+      .clear

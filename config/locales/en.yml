@@ -1,9 +1,9 @@
 en:
   site:
     title: "CCS12 - Crowdsourcing Conference"
-    description: "CCS12 - Crowdsourcing Conference, co-creation and collaboration"
+    description: "CCS12 - Crowdsourcing Conference. O futuro das ideias, inovação e criatividade. As alterações no ambiente da nova economia, a mobilidade dos ambientes de trabalho, conectividade e mídias sociais estão levando o crowdsourcing a ser um fenômeno do século 21."
     url: "http://conferenciacrowdsourcing.com.br"
-    fb_image: "http://www.conferenciacrowdsourcing.com.br/assets/ccs12.png"
+    fb_image: "http://i.imgur.com/5IlFo.png"
   activerecord:
     models:
       event: The Event

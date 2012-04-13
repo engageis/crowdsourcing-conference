@@ -1,0 +1,8 @@
+.box
+  =image_tag(profile.avatar.url(:default), :class => "profile")
+  h4.name
+    = profile.name
+    |  (#{profile.company})
+    |  – #{profile.country}
+  .bio
+    p = profile.bio

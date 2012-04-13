@@ -1,4 +1,9 @@
 en:
+  site:
+    title: "CCS12 - Crowdsourcing Conference"
+    description: "CCS12 - Crowdsourcing Conference, co-creation and collaboration"
+    url: "http://conferenciacrowdsourcing.com.br"
+    fb_image: "http://www.conferenciacrowdsourcing.com.br/assets/ccs12.png"
   activerecord:
     models:
       event: The Event

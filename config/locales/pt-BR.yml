@@ -1,5 +1,11 @@
 # Encoding: UTF-8
 pt-BR:
+  site:
+    title: "CCS12 - Conferência Crowdsourcing"
+    description: "CCS12 - Conferência Crowdsourcin, co-criação e colaboração"
+    url: "http://conferenciacrowdsourcing.com.br"
+    fb_image: "http://www.conferenciacrowdsourcing.com.br/assets/ccs12.png"
+
   event: "O evento"
   subscription:
     subscription: "Inscreva-se"

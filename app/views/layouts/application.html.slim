@@ -1,7 +1,12 @@
 doctype html
 html
   head
-    title CCS12 - Crowdsourcing Conference
+    title = t'site.title'
+    meta[property="og:title"        content="#{t 'site.title'}"]
+    meta[property="og:url"          content="#{t 'site.url'}"]
+    meta[property="og:description"  content="#{t 'site.description'}"]
+    meta[property="og:image"        content="#{t 'site.fb_image'}"]
+    
     link href='http://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'
     = stylesheet_link_tag "application", :media => "all"
     javascript:

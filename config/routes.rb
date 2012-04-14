@@ -11,4 +11,6 @@ Ccs12::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => 'home#index'
+
+  get '/coupons/check/:coupon_name' => 'coupons#check_consistency', :as => :check_coupon
 end

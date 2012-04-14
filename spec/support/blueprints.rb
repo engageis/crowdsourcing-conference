@@ -62,5 +62,6 @@ Video.blueprint do
 end
 
 Coupon.blueprint do
-  # Attributes here
+  name { Faker::Name.name }
+  value { 10 }
 end

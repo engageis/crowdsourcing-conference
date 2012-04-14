@@ -1,12 +1,11 @@
 #Encoding: UTF-8
 class SubscriptionsController < ApplicationController
   def checkout
-    puts ENV["MOIP_CONFIG_URI"].inspect
-    
     @payment = Payment.new params[:payment]
 
     total = 0
     names = []
+
     for subscription in @payment.subscriptions
       subscription.payment = @payment
       total += Subscription::VALUES[subscription.kind]

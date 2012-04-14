@@ -4,7 +4,7 @@ class Coupon < ActiveRecord::Base
 
   class << self
     def check_for_request(requested_name)
-      search = where(name: requested_name).first
+      search = where(name: requested_name, enabled: true).first
       if search.present?
         {value: search.value, message: 'Valid Coupon'}
       else

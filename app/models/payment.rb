@@ -6,6 +6,16 @@ class Payment < ActiveRecord::Base
   accepts_nested_attributes_for :subscriptions
 
   after_create :define_key
+
+  def disable_all_once_time_coupons
+    subscriptions.each do |subscription|
+      if subscription.coupon_name
+        coupon = Coupon.find_by_name(subscription.coupon_name)
+        coupon.update_attribute :enabled, false
+      end
+    end
+  end
+
   def define_key
     self.update_attribute :key, Digest::MD5.new.update("#{self.id}###{self.created_at}###{Kernel.rand}").to_s
   end

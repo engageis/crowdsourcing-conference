@@ -8,15 +8,15 @@ class SubscriptionsController < ApplicationController
 
     for subscription in @payment.subscriptions
       subscription.payment = @payment
-      total += Subscription::VALUES[subscription.kind]
+      total += subscription.total_with_discount
       names << subscription.name.split(' ').first
     end
 
-    if @payment.subscriptions.first.valid? 
+    if @payment.subscriptions.first.valid?
       @payment.fill_payer_details
     end
 
-    @payment.total = total
+    @payment.total = ("%0.0f" % total)
     if @payment.save
       SubscriptionMailer.new_subscription(@payment).deliver
       begin
@@ -43,6 +43,7 @@ class SubscriptionsController < ApplicationController
         #response["Status"] == "Sucesso"
 
         @payment.update_attribute :payment_token, response["Token"]
+        @payment.disable_all_once_time_coupons
         session[:_payment_token] = response["Token"]
         redirect_to MoIP::Client.moip_page(response["Token"])
       rescue

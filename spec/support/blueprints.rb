@@ -60,3 +60,7 @@ end
 Video.blueprint do
   link {"https://vimeo.com/28220980"}
 end
+
+Coupon.blueprint do
+  # Attributes here
+end

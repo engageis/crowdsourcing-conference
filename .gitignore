@@ -15,4 +15,4 @@
 /tmp
 /public/system
 .DS_Store
-/config/heroku.yml
+/config/heroku.ymlconfig/database.yml

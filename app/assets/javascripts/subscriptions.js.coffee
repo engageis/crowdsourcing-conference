@@ -86,6 +86,8 @@ Subscriptions = Backbone.View.extend({
     $('.subscriptions .subscription.'+id+" input").each ->
       if $(this).attr('type') != "radio"
         $(this).val('')
+      else
+        $(this).removeAttr('checked')
 
   delegate_masks:->
     $(".birthday").mask("99/99/9999");

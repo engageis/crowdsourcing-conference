@@ -16,6 +16,7 @@ pt-BR:
     summary: "Resumo da compra"
     add: "Fazer mais um inscrição"
     remove: "Remover"
+    invalid_coupon: "Cupom invalido"
     checkout:
       moip_error: "Ooops. Ocorreu um erro ao enviar seu pagamento para o MoIP. Por favor, tente novamente."
       message: "Inscrição no CCS12"
@@ -86,3 +87,4 @@ pt-BR:
         phone_cell: "Celular"
         kind: "Escolha os dias que você quer se inscrever"
         email: "E-mail"
+        coupon_name: "Cupom de Desconto"

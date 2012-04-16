@@ -7,10 +7,6 @@ en:
   activerecord:
     models:
       event: The Event
-  simple_form:
-    labels:
-      subscriptions:
-        email: "Email"
 
   subscription:
       subscription: "Subscription"
@@ -21,6 +17,7 @@ en:
       summary: "Summary of purchase"
       add: "Make another subscription"
       remove: "Remove"
+      invalid_coupon: "Invalid coupon"
       checkout:
         moip_error: "Ooops. There was an error while sending your payment to MoIP. Please try again."
         message: "Subscription CCS12"
@@ -82,6 +79,7 @@ en:
         phone_cell: "Cell"
         kind: "Choose the days you want to register"
         email: "Email"
+        coupon_name: "Discount Coupon"
 
   number:
     format:

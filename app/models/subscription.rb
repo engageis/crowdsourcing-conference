@@ -41,7 +41,7 @@ class Subscription < ActiveRecord::Base
   end
 
   def add_coupon_error
-    errors.add :coupon_name, I18n.t('invalid_coupon')
+    errors.add :coupon_name, I18n.t('subscription.invalid_coupon')
   end
 
   def used_coupons

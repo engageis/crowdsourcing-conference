@@ -6,6 +6,7 @@ class Payment < ActiveRecord::Base
   accepts_nested_attributes_for :subscriptions
 
   after_create :define_key
+  attr_accessor :used_coupons
 
   def disable_all_once_time_coupons
     subscriptions.each do |subscription|

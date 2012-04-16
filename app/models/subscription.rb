@@ -15,6 +15,8 @@ class Subscription < ActiveRecord::Base
   scope :confirmed, where(:paid => true)
   scope :pending, where(:paid => false)
 
+  attr_accessor :add_error
+
   def paid?
     paid
   end
@@ -25,19 +27,41 @@ class Subscription < ActiveRecord::Base
   end
 
   def total_with_discount
-    (Subscription::VALUES[kind] - coupon_details[:value]).abs
+    payment.used_coupons ||= []
+    subscription_value = Subscription::VALUES[kind]
+    if payment.used_coupons.include?(coupon_name)
+      @add_error = true
+      return subscription_value
+    end
+
+    if coupon_details[:valid]
+      payment.used_coupons << coupon_name if Coupon.find_by_name(coupon_name).only_once
+    end
+    (subscription_value - coupon_details[:value]).abs
+  end
+
+  def add_coupon_error
+    errors.add :coupon_name, I18n.t('invalid_coupon')
+  end
+
+  def used_coupons
+    @@used_coupons
   end
 
   private
 
   def validate_coupon
-    coupon_name = nil unless coupon_details[:valid]
+    unless coupon_details[:valid]
+      coupon_name = nil
+      add_coupon_error
+    end
+    if @add_error
+      coupon_name = nil
+      add_coupon_error
+    end
   end
 
   def coupon_details
     Coupon.check_for_request coupon_name
   end
-
-  #subscription.coupon_name = nil unless valid_coupon?(subscription)
-  #Subscription::VALUES[subscription.kind]
 end

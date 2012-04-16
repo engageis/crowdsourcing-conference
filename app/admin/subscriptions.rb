@@ -34,6 +34,7 @@ ActiveAdmin.register Subscription do
       row :city
       row :state
       row :created_at
+      row :coupon_name
     end
     panel "Payment Details" do
       attributes_table_for subscription.payment do

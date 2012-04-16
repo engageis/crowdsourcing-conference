@@ -15,4 +15,6 @@
 /tmp
 /public/system
 .DS_Store
-/config/heroku.yml
+/config/heroku.ymlconfig/database.yml
+config/database.yml
+db/schema.rb

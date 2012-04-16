@@ -60,3 +60,8 @@ end
 Video.blueprint do
   link {"https://vimeo.com/28220980"}
 end
+
+Coupon.blueprint do
+  name { Faker::Name.name }
+  value { 10 }
+end

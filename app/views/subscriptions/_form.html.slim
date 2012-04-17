@@ -11,7 +11,7 @@
       = s.input :email, wrapper_html: {class: "clear"}
       = s.input :phone, input_html: {class: "phone"}, wrapper_html: {class: "float_inputs clear"}
       = s.input :phone_cell, input_html: {class: "phone"}, wrapper_html: {class: "float_inputs"}
-      = s.input :coupon_name, wrapper_html: {class: "clear"}
+      = s.input :coupon_name, input_html: {class: "coupon_name"}, wrapper_html: {class: "clear"}
       .clear
     .box
       = s.input :kind, input_html: {class: "subscription_kind"}, :as => :select, collection: Hash[*Subscription::KINDS.map {|v| [I18n.t(v), "#{v}"]}.flatten], wrapper_html: {class: "kind"}

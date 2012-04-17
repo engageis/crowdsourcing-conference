@@ -6,6 +6,8 @@ Subscriptions = Backbone.View.extend({
     "change .subscriptions .subscription .subscription_kind": "update_summary"
     "change .subscriptions .subscription .subscription_name": "update_summary"
     "click .summaries .summary .remove a": "remove"
+    "change .subscriptions .subscription .coupon_name": "coupon_name"
+
 
   add: ->
     size = $('.subscriptions .subscription').size()
@@ -38,10 +40,17 @@ Subscriptions = Backbone.View.extend({
     total = 0
     $('.subscriptions .subscription .subscription_kind').each ->
       subscription = that.get_subscription_class($(this))
-      value = that.VALUES[this.value]
+
+      if $(".subscriptions .subscription.#{subscription} .coupon_name").attr('data-valid') == "true"
+        discount = $(".subscriptions .subscription.#{subscription} .coupon_name").attr('data-value')
+      else
+        discount = 0
+
+      value = Math.abs(that.VALUES[this.value] - discount)
+      total = total + value
       value = "#{value},00" if that.VALUES[this.value]
       $(".summaries .summary."+subscription+" .value span").html(value)
-      total = total + that.VALUES[this.value]
+
     $('form.new_payment .total').val(total)
     $('form.new_payment .subtotal span').html(total)
     $('form.new_payment .subtotal span').append(",00") if total
@@ -90,8 +99,8 @@ Subscriptions = Backbone.View.extend({
         $(this).removeAttr('checked')
 
   delegate_masks:->
-    $(".birthday").mask("99/99/9999");
-    $(".phone").mask("(99)9999-9999");
+    $(".birthday").mask("99/99/9999")
+    $(".phone").mask("(99)9999-9999")
 
   initialize: ->
     i = 0
@@ -103,7 +112,58 @@ Subscriptions = Backbone.View.extend({
 
   get_subscription_class: (that)->
     _.last(that.parents(".subscription").attr('class').split(' '))
+
+  coupon: {
+    add_error: (subscription)->
+      this.remove_error(subscription)
+      $(".subscriptions .subscription.#{subscription} .coupon_name").parent("div").addClass('field_with_errors').append($('<span>').html("Invalid Coupon").addClass('error'))
+    remove_error: (subscription)->
+      $(".subscriptions .subscription.#{subscription} .coupon_name").parent("div").removeClass('field_with_errors')
+      $(".subscriptions .subscription.#{subscription} div span.error").css('display', 'none')
+  }
+
+  coupon_name: (el)->
+    target = $(el.target)
+    that = this
+    subscription = that.get_subscription_class($(target))
+    that.coupon.remove_error(subscription)
+    return unless target.val()
+
+    $.ajax({
+      url: "/coupons/check/#{target.val()}.json"
+      beforeSend: ->
+        target.removeAttr 'data-valid'
+        target.removeAttr 'data-only_once'
+        target.removeAttr 'data-value'
+      success:(data) ->
+        if data.valid
+          target.attr 'data-valid', 'true'
+          target.attr 'data-only_once', data.only_once
+          target.attr 'data-value', data.value
+          that.coupon.remove_error(subscription)
+        else
+          that.coupon.add_error(subscription)
+
+        used_coupons = []
+        if $(".subscriptions .subscription.#{subscription} .coupon_name").attr('data-only_once') == "true"
+          $('.subscriptions .subscription .coupon_name').each ->
+            used_coupons.push this.value
+          count = _.select(used_coupons, (v)->
+            return true if v == $(".subscriptions .subscription.#{subscription} .coupon_name").val()
+          ).length
+          if count > 1
+            that.coupon.add_error(subscription)
+            target.removeAttr 'data-valid'
+            target.removeAttr 'data-only_once'
+            target.removeAttr 'data-value'
+          else
+            that.coupon.remove_error(subscription)
+      error: ->
+        alert('Oops... You have a error!')
+      complete: ->
+        that.update_values()
+    })
 })
 
 jQuery ->
-  window.view = new Subscriptions({el: $("body") });
+  window.view = new Subscriptions({el: $("body") })

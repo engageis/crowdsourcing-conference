@@ -18,3 +18,4 @@
 /config/heroku.ymlconfig/database.yml
 config/database.yml
 db/schema.rb
+.sass-cache/

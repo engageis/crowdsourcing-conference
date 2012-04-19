@@ -51,6 +51,8 @@ class Subscription < ActiveRecord::Base
   private
 
   def validate_coupon
+    return true unless coupon_name.present?
+
     unless coupon_details[:valid]
       coupon_name = nil
       add_coupon_error

@@ -17,6 +17,7 @@ pt-BR:
     add: "Fazer mais um inscrição"
     remove: "Remover"
     invalid_coupon: "Cupom invalido"
+    validate_coupon: "Validar Cupom"
     checkout:
       moip_error: "Ooops. Ocorreu um erro ao enviar seu pagamento para o MoIP. Por favor, tente novamente."
       message: "Inscrição no CCS12"

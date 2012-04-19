@@ -18,6 +18,7 @@ en:
       add: "Make another subscription"
       remove: "Remove"
       invalid_coupon: "Invalid coupon"
+      validate_coupon: "Validate Coupon"
       checkout:
         moip_error: "Ooops. There was an error while sending your payment to MoIP. Please try again."
         message: "Subscription CCS12"

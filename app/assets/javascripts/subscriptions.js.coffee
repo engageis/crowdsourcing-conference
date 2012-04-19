@@ -7,7 +7,7 @@ Subscriptions = Backbone.View.extend({
     "change .subscriptions .subscription .subscription_name": "update_summary"
     "click .summaries .summary .remove a": "remove"
     "change .subscriptions .subscription .coupon_name": "coupon_name"
-
+    "click a.validade_coupon": "validade_coupon"
 
   add: ->
     size = $('.subscriptions .subscription').size()
@@ -116,14 +116,19 @@ Subscriptions = Backbone.View.extend({
   coupon: {
     add_error: (subscription)->
       this.remove_error(subscription)
-      $(".subscriptions .subscription.#{subscription} .coupon_name").parent("div").addClass('field_with_errors').append($('<span>').html("Invalid Coupon").addClass('error'))
+      $(".subscriptions .subscription.#{subscription} .coupon_name").parent("div").addClass('field_with_errors').append($('<span>').html(I18n.invalid_coupon).addClass('error'))
     remove_error: (subscription)->
       $(".subscriptions .subscription.#{subscription} .coupon_name").parent("div").removeClass('field_with_errors')
       $(".subscriptions .subscription.#{subscription} div span.error").css('display', 'none')
   }
-
-  coupon_name: (el)->
+  validade_coupon: (el) ->
     target = $(el.target)
+    that = this
+    subscription = that.get_subscription_class($(target))
+    that.coupon_name(false, $(".subscriptions .subscription.#{subscription} .coupon_name"))
+
+  coupon_name: (el, target = false)->
+    target = $(el.target) if el
     that = this
     subscription = that.get_subscription_class($(target))
     that.coupon.remove_error(subscription)

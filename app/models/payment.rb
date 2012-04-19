@@ -10,7 +10,7 @@ class Payment < ActiveRecord::Base
 
   def disable_all_once_time_coupons
     subscriptions.each do |subscription|
-      if subscription.coupon_name
+      if subscription.coupon_name.present?
         coupon = Coupon.find_by_name(subscription.coupon_name)
         coupon.update_attribute :enabled, false
       end

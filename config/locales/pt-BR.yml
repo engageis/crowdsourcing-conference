@@ -16,7 +16,7 @@ pt-BR:
     summary: "Resumo da compra"
     add: "Fazer mais um inscrição"
     remove: "Remover"
-    invalid_coupon: "Cupom invalido"
+    invalid_coupon: "Cupom inválido"
     validate_coupon: "Validar Cupom"
     checkout:
       moip_error: "Ooops. Ocorreu um erro ao enviar seu pagamento para o MoIP. Por favor, tente novamente."

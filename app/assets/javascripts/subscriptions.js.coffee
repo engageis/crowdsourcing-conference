@@ -121,6 +121,7 @@ Subscriptions = Backbone.View.extend({
       $(".subscriptions .subscription.#{subscription} .coupon_name").parent("div").removeClass('field_with_errors')
       $(".subscriptions .subscription.#{subscription} div span.error").css('display', 'none')
   }
+
   validade_coupon: (el) ->
     target = $(el.target)
     that = this

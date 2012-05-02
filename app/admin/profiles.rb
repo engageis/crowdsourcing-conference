@@ -2,6 +2,7 @@ ActiveAdmin.register Profile do
   actions :all, except: [:show]
 
   index do
+    column :position
     column "Type", :kind
     column :name
     column :company

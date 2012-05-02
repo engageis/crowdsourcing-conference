@@ -6,6 +6,7 @@
     = f.input :avatar, required: true
     div.avatar
       = image_tag @profile.avatar.url(:default) if @profile.avatar?
+    = f.input :position
 
   .language-tabs
     = render 'admin/shared/language_selection', translations: @profile.profile_translations

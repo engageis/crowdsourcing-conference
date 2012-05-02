@@ -11,6 +11,7 @@ class Profile < ActiveRecord::Base
 
   scope :speakers, where(kind: "Speaker")
   scope :workshops, where(kind: "Workshop")
+  default_scope order: "name"
 
   protected
   def build_translations

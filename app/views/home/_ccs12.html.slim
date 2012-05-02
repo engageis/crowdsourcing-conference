@@ -9,27 +9,26 @@
   .infos_top
     .realization
       h2 = t'info.realization'
-      hr
       = link_to image_tag("mutopo.png", :class => 'mutopo_logo', style: "width: 175px"), "http://www.mutopo.com.br/", target: "_blanck"
     .sponsors
       h2 = t'info.sponsors'
-      hr
       table
         thead
           tr
             th
               h3 = t'info.diamond'
-            th
             td
               h3 = t'info.silver'
             th
               h3 = t'info.bronze'
         tbody
           tr
-            td = link_to image_tag('infos/sponsors_fecomercio_sp.png', style: "width: 150px"), "http://www.fecomercio.com.br/", target: "_blanck"
-            td = link_to image_tag('infos/sebrae.png', style: "width: 88px"), "http://www.sebrae.com.br/", target: "_blanck"
+            td
+              = link_to image_tag('infos/sponsors_fecomercio_sp.png', style: "width: 150px"), "http://www.fecomercio.com.br/", target: "_blanck"
+              = link_to image_tag('infos/sebrae.png', style: "width: 88px"), "http://www.sebrae.com.br/", target: "_blanck"
             td
               = link_to image_tag('infos/agenciaclickisobar.png'), "http://www.agenciaclick.com.br/", target: "_blanck"
               = link_to image_tag('infos/tecnisa.png', style: "width: 107px"), "http://www.tecnisa.com.br/", target: "_blanck"
+              = link_to image_tag('infos/senac.png'), "http://www.sp.senac.br/", target: "_blanck"
             td = link_to image_tag('infos/engage.png', style: "width: 95px"), 'http://engage.is', target: "_blanck"
   .clear

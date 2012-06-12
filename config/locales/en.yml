@@ -8,6 +8,7 @@ en:
     models:
       event: The Event
 
+  invictions: "Invitations to CCS12 may be purchased at:<br /> Escola São Paulo<br /> Rua Augusta, 2239<br /> Jardim Paulista, São Paulo<br /> (11) 3060-3636<br />"
   subscription:
       subscription: "Subscription"
       first_day: "First day"

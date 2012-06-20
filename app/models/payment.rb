@@ -12,7 +12,7 @@ class Payment < ActiveRecord::Base
     subscriptions.each do |subscription|
       if subscription.coupon_name.present?
         coupon = Coupon.find_by_name(subscription.coupon_name)
-        coupon.update_attribute :enabled, false
+        coupon.update_attribute :enabled, false if coupon.only_once == true
       end
     end
   end

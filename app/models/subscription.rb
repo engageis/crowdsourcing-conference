@@ -1,8 +1,8 @@
 class Subscription < ActiveRecord::Base
   #VALUES = {'subscription.first_day' => 300, 'subscription.second_day' => 300, 'subscription.two_days' => 500}
 
-  VALUES =  {'subscription.first_day' => 400, 'subscription.second_day' => 400, 'subscription.two_days' => 650}
-  #VALUES =  {'subscription.first_day' => 740, 'subscription.second_day' => 740, 'subscription.two_days' => 740}
+  #VALUES =  {'subscription.first_day' => 400, 'subscription.second_day' => 400, 'subscription.two_days' => 650}
+  VALUES =  {'subscription.first_day' => 740, 'subscription.second_day' => 740, 'subscription.two_days' => 740}
 
   KINDS = ['subscription.two_days']
   # 'subscription.first_day', 'subscription.second_day',

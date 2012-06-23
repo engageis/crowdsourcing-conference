@@ -4,8 +4,8 @@ h1 = t'subscription.subscription'
 .clear
 p
   /li #{t'prices.dates.until'} #{t'prices.dates.may'} R$ 500,00
-  = "#{t'prices.dates.until'} #{t'prices.dates.june'} R$ 650,00"
-  |  | 
+  /= "#{t'prices.dates.until'} #{t'prices.dates.june'} R$ 650,00"
+  /|  | 
   = "#{t'prices.dates.until'} #{t'prices.dates.july'} R$ 740,00"
 p.text = t('invictions').html_safe
 - if flash[:failure]

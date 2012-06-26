@@ -17,9 +17,9 @@
             li = link_to t("workshops"), "#profiles", class: "anchorLink workshops"
         li = link_to t("subscription.subscription"), "#subscription", class: "anchorLink"
         li = link_to t("info.location"), "#location", class: "anchorLink"
-        li
-          span = t(:editions)
-          ul
-            li = link_to 'CCS11', 'http://ccs11.conferenciacrowdsourcing.com.br'
+        li = link_to "Blog", "http://conferenciacrowdsourcing.com/", target: "_blank"
+          /span = t(:editions)
+          /ul
+            /li = link_to 'CCS11', 'http://ccs11.conferenciacrowdsourcing.com.br'
             /li = link_to 'CCS12', '#edition-ccs12', class: "anchorLink"
         li = link_to t(:contact), "#contact", class: "anchorLink"

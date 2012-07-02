@@ -1,5 +1,5 @@
 Subscriptions = Backbone.View.extend({
-  VALUES: {'subscription.first_day': 740, 'subscription.second_day': 740, 'subscription.two_days': 740}
+  VALUES: {'subscription.first_day': 740, 'subscription.second_day': 370, 'subscription.two_days': 740}
 
   events:
     "click a.add": "add"
